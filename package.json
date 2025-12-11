@@ -4,11 +4,15 @@
   "description": "Scripts to generate GitHub profile metrics and update README",
   "main": "index.js",
   "scripts": {
+    "postinstall": "echo 'postinstall node-vitepress'",
+    "lint": "echo \"Error: no test specified\" && exit 1",
+    "lint:fix": "echo \"Error: no test specified\" && exit 1",
+    "format": "echo \"Error: no test specified\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.11.0"
+    "axios": "^1.12.2"
   }
 }

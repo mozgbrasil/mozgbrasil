@@ -32,7 +32,9 @@ function aggregateCommitsByDay(dates) {
   for (let i = 0; i < DAYS; i++) {
     const day = new Date(today);
     day.setDate(today.getDate() - i);
-    counts[DAYS - i - 1] = dates.filter((d) => d.toDateString() === day.toDateString()).length;
+    counts[DAYS - i - 1] = dates.filter(
+      (d) => d.toDateString() === day.toDateString(),
+    ).length;
   }
   return counts;
 }
@@ -71,7 +73,13 @@ function generateStreakSVG(counts) {
   for (let i = 0; i < counts.length; i++) {
     const x = 10 + i * 30;
     const level =
-      counts[i] === 0 ? 'level1' : counts[i] < 2 ? 'level2' : counts[i] < 5 ? 'level3' : 'level4';
+      counts[i] === 0
+        ? 'level1'
+        : counts[i] < 2
+          ? 'level2'
+          : counts[i] < 5
+            ? 'level3'
+            : 'level4';
     rects += `<rect x="${x}" y="10" class="day ${level}"/>`;
   }
 

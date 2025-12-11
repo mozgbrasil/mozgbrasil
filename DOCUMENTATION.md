@@ -2,7 +2,11 @@
 
 ## 📌 Visão Geral
 
-O GitHub Profile Automation é uma ferramenta poderosa para aprimorar e automatizar o perfil do GitHub com métricas dinâmicas, conquistas e visualizações interativas. Ele é projetado para funcionar como um projeto autônomo dentro do monorepo, utilizando GitHub Actions para atualizações periódicas.
+O GitHub Profile Automation é uma ferramenta poderosa para aprimorar e
+automatizar o perfil do GitHub com métricas dinâmicas, conquistas e
+visualizações interativas. Ele é projetado para funcionar como um projeto
+autônomo dentro do monorepo, utilizando GitHub Actions para atualizações
+periódicas.
 
 ## 🏗️ Estrutura do Projeto
 
@@ -93,7 +97,8 @@ npm run lint
 
 ### GitHub Actions
 
-O fluxo de trabalho está configurado para rodar diariamente. Você pode personalizar a frequência em `.github/workflows/update.yml`.
+O fluxo de trabalho está configurado para rodar diariamente. Você pode
+personalizar a frequência em `.github/workflows/update.yml`.
 
 ## 🔄 Atualização
 
@@ -106,7 +111,8 @@ O fluxo de trabalho está configurado para rodar diariamente. Você pode persona
 
 ### Personalizando Conquistas
 
-Edite `scripts/achievements.js` para adicionar ou modificar conquistas. Cada conquista deve ter:
+Edite `scripts/achievements.js` para adicionar ou modificar conquistas. Cada
+conquista deve ter:
 
 - Um identificador único
 - Título e descrição
@@ -123,13 +129,16 @@ Edite `scripts/achievements.js` para adicionar ou modificar conquistas. Cada con
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+Este projeto está licenciado sob a licença MIT - veja o arquivo
+[LICENSE](LICENSE) para detalhes.
 
 ## 📞 Suporte
 
-Para suporte, por favor abra uma [issue](https://github.com/mozgbrasil/monorepo/issues) ou entre em contato via [email](mailto:suporte@mozg.com.br).
+Para suporte, por favor abra uma
+[issue](https://github.com/mozgbrasil/monorepo/issues) ou entre em contato via
+[email](mailto:suporte@mozg.com.br).
 
 ---
 
-📅 **Última Atualização**: Setembro de 2025  
+📅 **Última Atualização**: Setembro de 2025\
 🏷 **Versão**: 1.0.0

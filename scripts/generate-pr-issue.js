@@ -17,8 +17,12 @@ if (!fs.existsSync(outputDir)) {
 }
 
 async function fetchPRsAndIssues() {
-  const prs = await axios.get(`https://api.github.com/repos/${user}/${repo}/pulls?state=all`);
-  const issues = await axios.get(`https://api.github.com/repos/${user}/${repo}/issues?state=all`);
+  const prs = await axios.get(
+    `https://api.github.com/repos/${user}/${repo}/pulls?state=all`,
+  );
+  const issues = await axios.get(
+    `https://api.github.com/repos/${user}/${repo}/issues?state=all`,
+  );
   return { prs: prs.data.length, issues: issues.data.length };
 }
 

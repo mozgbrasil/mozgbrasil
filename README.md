@@ -1,121 +1,237 @@
-# Marcio Amorim | Desenvolvedor Fullstack & DevOps 🚀
+<div align="center">
 
-## 👋 Sobre Mim
+# Marcio dos Santos Amorim
 
-Desenvolvedor fullstack e especialista em DevOps com foco em **APIs, microsserviços, performance, automação e observabilidade**. Apaixonado por criar soluções escaláveis e eficientes que integram diferentes tecnologias.
+### Full Stack Developer | Software Architect | DevOps Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maramorim/)
+[![Website](https://img.shields.io/badge/Website-mozg.com.br-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://mozg.com.br)
+[![Email](https://img.shields.io/badge/Email-mozgbrasil@gmail.com-red?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mozgbrasil@gmail.com)
+
+**25+ anos transformando ideias em soluções tecnológicas**
+
+_São Paulo, Brasil_
+
+</div>
+
+---
+
+## Sobre Mim
+
+Sou desenvolvedor de software desde **1999**, com uma trajetória que começou como Office Boy e evoluiu até Software Engineer e Arquiteto de Soluções. Ao longo de mais de duas décadas, construí uma carreira sólida baseada em **aprendizado contínuo**, **excelência técnica** e **entrega de resultados**.
+
+Minha jornada inclui passagens por grandes instituições financeiras como **Santander** e **Bradesco**, além da **Fundação Vanzolini (USP)**, onde desenvolvi sistemas críticos de alta disponibilidade.
+
+Em 2016, fundei o projeto **MOZG**, meu laboratório pessoal de inovação tecnológica.
+
+> _"Acredito que código bem escrito é aquele que resolve problemas reais, é fácil de manter e escala com o negócio."_
+
+---
+
+## Trajetória Profissional
 
 📄 [Ver meu currículo](https://mozg.com.br/assets/curriculum.pdf)
 
-## 🛠️ Habilidades Técnicas
+---
 
-### 💻 Linguagens de Programação
+## Stack Tecnológica
 
-- **Backend**: Node.js, .NET, Java, Python, Ruby, PHP, Go, Rust
-- **Frontend**: JavaScript, TypeScript, React, Vue.js
-- **Scripting**: Bash, Python
+### Frontend
 
-### ☁️ Cloud & DevOps
+| Categoria                | Tecnologias                                             |
+| ------------------------ | ------------------------------------------------------- |
+| **Frameworks/Libraries** | React, Angular, Vue.js, Svelte, Lit, Next.js            |
+| **Mobile/Hybrid**        | Ionic, Capacitor, React Native                          |
+| **Styling**              | Tailwind CSS, SASS/SCSS, Styled Components, CSS Modules |
+| **State Management**     | Redux, Zustand, Context API, RxJS                       |
+| **Build Tools**          | Vite, Webpack, esbuild, Turbopack                       |
+| **Testing**              | Jest, Cypress, Playwright, WebDriver                    |
+| **Documentation**        | VitePress, Storybook                                    |
 
-- **Cloud**: AWS, Azure, GCP
-- **Contêineres**: Docker, Kubernetes
-- **IaC**: Terraform, Ansible
-- **CI/CD**: GitHub Actions, Jenkins, GitLab CI
-- **Monitoramento**: Prometheus, Grafana, ELK Stack
+### Backend
 
-### 🗄️ Bancos de Dados
+| Categoria      | Tecnologias                          |
+| -------------- | ------------------------------------ |
+| **Node.js**    | NestJS, Express, Fastify, Koa        |
+| **Python**     | Django, FastAPI, Flask               |
+| **PHP**        | Laravel, Magento 2, Symfony, CakePHP |
+| **Ruby**       | Ruby on Rails                        |
+| **Java**       | Spring Boot                          |
+| **.NET**       | ASP.NET Core                         |
+| **Go**         | Gin, Echo                            |
+| **Rust**       | Actix, Tokio                         |
+| **Outros**     | Perl, Bash, Deno, C++/GLSL           |
+| **APIs**       | REST, GraphQL, gRPC, WebSockets      |
+| **Mensageria** | RabbitMQ, Kafka, Redis Pub/Sub       |
 
-- **SQL**: PostgreSQL, MySQL, SQL Server
-- **NoSQL**: MongoDB, Redis, DynamoDB
-- **Search**: Elasticsearch
+### Bancos de Dados
+
+| Tipo                   | Tecnologias                                      |
+| ---------------------- | ------------------------------------------------ |
+| **Relacional**         | PostgreSQL, MySQL, SQL Server, Oracle, SQLite    |
+| **NoSQL**              | MongoDB, Redis, Elasticsearch, DynamoDB          |
+| **Cache**              | Redis, Memcached                                 |
+| **Search**             | Elasticsearch, Algolia                           |
+| **ORM/Query Builders** | Prisma, TypeORM, Sequelize, Eloquent, SQLAlchemy |
+
+### DevOps & Infrastructure
+
+| Categoria           | Tecnologias                                             |
+| ------------------- | ------------------------------------------------------- |
+| **Containers**      | Docker, Docker Compose, Podman                          |
+| **Orquestração**    | Kubernetes (K8s), Rancher, Docker Swarm                 |
+| **CI/CD**           | GitHub Actions, Jenkins, GoCD, GitLab CI, Azure DevOps  |
+| **IaC**             | Terraform (AWS, Azure, GCP), Ansible, Pulumi            |
+| **Cloud Providers** | AWS, Google Cloud Platform, Azure, DigitalOcean, Vercel |
+| **Web Servers**     | Nginx, Apache, Traefik                                  |
+| **Monitoring**      | Prometheus, Grafana, Alertmanager, Dynatrace            |
+| **Logging**         | ELK Stack (Elasticsearch, Logstash, Kibana), Datadog    |
+| **Code Quality**    | SonarQube, ESLint, Prettier, PHPStan                    |
+
+### Arquitetura & Metodologias
+
+| Categoria        | Conhecimentos                                            |
+| ---------------- | -------------------------------------------------------- |
+| **Patterns**     | Microservices, Monolith, BFF, CQRS, Event Sourcing       |
+| **Princípios**   | SOLID, Clean Code, Clean Architecture, DDD, TDD          |
+| **APIs**         | RESTful Design, OpenAPI/Swagger, API Gateway             |
+| **Segurança**    | OAuth 2.0, JWT, OWASP, SSL/TLS                           |
+| **Metodologias** | Scrum, Kanban, GitFlow, Trunk-Based Development          |
+| **Testes**       | Unit Testing, Integration Testing, E2E, Mutation Testing |
 
 ---
 
-### ⭐ Distintivos
+## Projeto MOZG
 
 <div align="center">
 
-[![github-profile CI/CD 🚀](https://github.com/mozgbrasil/mozgbrasil/actions/workflows/ci.yml/badge.svg)](https://github.com/mozgbrasil/mozgbrasil/actions/workflows/ci.yml)
-[![GitHub followers](https://img.shields.io/github/followers/mozgbrasil?style=social)](https://github.com/mozgbrasil)
-[![WakaTime](https://wakatime.com/badge/user/979f61e2-29ed-491b-9606-292109a46156.svg)](https://wakatime.com/@mozgbrasil)
-[![Profile Views](https://komarev.com/ghpvc/?username=mozgbrasil&color=blueviolet)](https://github.com/mozgbrasil)
+[![MOZG](https://img.shields.io/badge/MOZG-Laboratório_de_Software-0066cc?style=for-the-badge)](https://mozg.com.br)
+
+**Fundado em Fevereiro de 2016**
+
+</div>
+
+O **MOZG** é meu laboratório pessoal de desenvolvimento de software, criado para experimentar novas tecnologias, explorar soluções criativas e entregar ferramentas que agregam valor real aos usuários.
+
+### Missao
+
+Promover **automação**, **lucratividade** e **inovação** através de software de alta qualidade, mantendo-se sempre atualizado com as melhores práticas da indústria.
+
+### Principais Entregas
+
+| Módulo                           | Descrição                                         | Clientes/Integrações                   |
+| -------------------------------- | ------------------------------------------------- | -------------------------------------- |
+| **Módulos de Pagamento Magento** | Integrações com gateways de pagamento brasileiros | Cielo, Bradesco, Itaú, PagSeguro, Rede |
+| **Módulos de Frete Magento**     | Cálculo de frete e rastreamento automático        | Correios, Jadlog, Jamef, Total Express |
+| **Automações E-commerce**        | Scripts e ferramentas de produtividade            | +100 lojas virtuais atendidas          |
+| **Documentação Técnica**         | Guias e tutoriais para desenvolvedores            | VitePress, Markdown                    |
+
+### Pacotes Publicados
+
+Todos os módulos PHP estão disponíveis via **Packagist** para instalação via Composer:
+
+```bash
+composer require mozgbrasil/<module-name>
+```
+
+[![Packagist](https://img.shields.io/badge/Packagist-mozgbrasil-orange?style=flat-square&logo=packagist)](https://packagist.org/packages/mozgbrasil/)
+
+Todos os módulos Node.js estão disponíveis via **NPM** para instalação via npm:
+
+```bash
+npm install @mozgbrasil/<module-name>
+```
+
+[![NPM](https://img.shields.io/badge/NPM-mozgbrasil-orange?style=flat-square&logo=npm)](https://www.npmjs.com/~mozg)
+
+---
+
+## Monorepo de Estudos
+
+Mantenho um monorepo estruturado como ambiente de estudos e desenvolvimento contínuo, cobrindo múltiplas linguagens e tecnologias:
+
+```
+monorepo/
+├── infra/
+│   ├── terraform/
+│   │   ├── aws/          # EC2, S3, RDS, Lambda, ECS
+│   │   ├── azure/        # App Service, Functions, CosmosDB
+│   │   └── gcp/          # Cloud Run, BigQuery, Firestore
+│   ├── k8s/              # Manifests, Helm Charts
+│   └── monitoring/
+│       ├── prometheus/   # Métricas e alertas
+│       ├── grafana/      # Dashboards
+│       ├── alertmanager/ # Notificações
+│       └── elasticsearch/# Logs centralizados
+│
+└── projects/
+    ├── node/
+    │   ├── angular/      # SPA empresarial
+    │   ├── express/      # APIs REST
+    │   ├── nestjs/       # Microserviços
+    │   ├── react/        # Interfaces modernas
+    │   ├── vitepress/    # Documentação
+    │   ├── web-components/ # Componentes nativos
+    │   ├── web-extension/  # Extensões browser
+    │   └── webdriver/    # Testes E2E
+    ├── python/
+    │   ├── django/       # Full-stack Python
+    │   └── fastapi/      # APIs de alta performance
+    ├── php/
+    │   ├── laravel/      # Aplicações web
+    │   └── magento2/     # E-commerce enterprise
+    ├── go/               # Sistemas de alta concorrência
+    ├── rust/             # Performance crítica
+    ├── java-spring/      # Aplicações corporativas
+    ├── dotnet/           # Ecossistema Microsoft
+    ├── ruby-rails/       # Prototipagem rápida
+    ├── cpp-glsl/         # Computação gráfica
+    ├── perl/             # Scripts e automação
+    ├── bash/             # DevOps scripts
+    └── deno/             # Runtime moderno JS/TS
+```
+
+
+
+---
+
+## GitHub Stats
+
+<div align="center">
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=mozgbrasil&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=mozgbrasil&layout=compact&langs_count=10&theme=tokyonight)
+
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=mozgbrasil&theme=tokyonight)
 
 </div>
 
 ---
 
-### 🎮 Gamificação & Conquistas
+## Vamos Conversar?
+
+Estou sempre aberto a novos desafios, colaborações e oportunidades. Se você busca um profissional completo que entende desde a concepção até o deploy em produção, vamos conversar!
 
 <div align="center">
 
-![Productivity Master](https://img.shields.io/badge/Productivity_Master-💪-brightgreen)
-![Top Repo Hero](https://img.shields.io/badge/Top_Repo_Hero-🚀-blue)
-![All Systems Green](https://img.shields.io/badge/All_Systems_Green-✅-green)
-![API Master](https://img.shields.io/badge/API_Master-👨‍💻-yellow)
-![Fullstack Guru](https://img.shields.io/badge/Fullstack_Guru-🧩-orange)
-![Open Source Contributor](https://img.shields.io/badge/Open_Source_Contributor-🌟-blueviolet)
-![Hyper Dev](https://img.shields.io/badge/Hyper_Dev-💡-red)
-![Career Legend](https://img.shields.io/badge/Career_Legend-🌐-pink)
-![Commit Legend](https://img.shields.io/badge/Commit_Legend-🔥-ff4500)
-![Issue Hero](https://img.shields.io/badge/Issue_Hero-📌-00bfff)
-![PR Master](https://img.shields.io/badge/PR_Master-✍️-ff69b4)
-
-</div>
+| Canal        | Link                                                                |
+| ------------ | ------------------------------------------------------------------- |
+| **LinkedIn** | [linkedin.com/in/mozgbrasil](https://www.linkedin.com/in/mozgbrasil/) |
+| **Email**    | [mozgbrasil@gmail.com](mailto:mozgbrasil@gmail.com)                 |
+| **Website**  | [mozg.com.br](https://mozg.com.br)                                  |
+| **GitHub**   | [github.com/mozgbrasil](https://github.com/mozgbrasil)              |
 
 ---
 
-## 📊 Estatísticas do GitHub
+### Áreas de Interesse
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=mozgbrasil&show_icons=true&theme=radical&include_all_commits=true&count_private=true" alt="GitHub stats" height="170" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mozgbrasil&layout=compact&langs_count=8&theme=radical" alt="Top Langs" height="170" />
-  <img src="https://streak-stats.demolab.com?user=mozgbrasil&theme=radical" alt="GitHub Streak" />
-</div>
-
-## 🏆 Conquistas
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=mozgbrasil&theme=onedark&no-bg=true&no-frame=true&margin-w=10&margin-h=10" alt="trophies" />
-</div>
-
-## 📈 Atividade Recente
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=mozgbrasil&theme=react-dark&hide_title=true&area=true" alt="Activity Graph" />
-</div>
-
-## 🌐 Conecte-se Comigo
-
-- 💼 [LinkedIn](https://www.linkedin.com/in/marcio-amorim/)
-- 🐦 [Twitter](https://twitter.com/mozgbrasil)
-- 📧 [Email](mailto:suporte@mozg.com.br)
-- 💻 [Website](https://mozg.com.br)
-- 💝 [Apoie meu trabalho](https://github.com/sponsors/mozgbrasil)
-
-## 📊 Estatísticas de Código
-
-<div align="center">
-  <img src="./metrics/streak_3d_live.svg" alt="Heatmap 3D Live" />
-  <img src="./metrics/commits_3d_live.svg" alt="Commits 3D Live" />
-  <img src="./metrics/pr_issue_chart.svg" alt="PRs & Issues" />
-  <img src="./metrics/metrics.plugin.wakatime.svg" alt="WakaTime" />
-</div>
+`Arquitetura de Software` `DevOps/SRE` `Cloud Native` `E-commerce` `Fintech` `Open Source`
 
 ---
 
-## 🌍 Links Importantes
+_"Código é poesia que resolve problemas reais."_
 
-- 🌐 **Site**: [mozg.com.br](https://mozg.com.br/)
-- 💻 **GitHub**: [github.com/mozgbrasil](https://github.com/mozgbrasil)
-- 📊 **WakaTime**: [@mozgbrasil](https://wakatime.com/@mozgbrasil)
-- 💸 **Patrocínio**: [github.com/sponsors/mozgbrasil](https://github.com/sponsors/mozgbrasil)
-- 📫 **Contato**: [suporte@mozg.com.br](mailto:suporte@mozg.com.br)
+![Profile Views](https://komarev.com/ghpvc/?username=mozgbrasil&color=blue&style=flat-square)
 
----
-
-## 🤝 Contribua!
-
-- 🌟 Dê uma estrela nos meus repositórios
-- 💸 Torne-se um [patrocinador](https://github.com/sponsors/mozgbrasil)
-- 📧 Entre em contato para colaborações: [suporte@mozg.com.br](mailto:suporte@mozg.com.br)
-
----
+</div>

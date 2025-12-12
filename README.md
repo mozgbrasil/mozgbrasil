@@ -4,7 +4,7 @@
 
 ### Full Stack Developer | Software Architect | DevOps Engineer
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maramorim/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mozgbrasil/)
 [![Website](https://img.shields.io/badge/Website-mozg.com.br-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://mozg.com.br)
 [![Email](https://img.shields.io/badge/Email-mozgbrasil@gmail.com-red?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mozgbrasil@gmail.com)
 

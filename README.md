@@ -1,6 +1,7 @@
 <div align="center">
 
 # Marcio dos Santos Amorim
+
 ### Software Architect | Full Stack Engineer | Platform & DevOps
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mozgbrasil/)
@@ -28,17 +29,6 @@ Sao Paulo, Brasil
 - Tenho experiencia em contextos de alta criticidade e escala, com passagem por Santander, Bradesco e Fundacao Vanzolini (USP).
 - Em 2016 fundei o **MOZG**, laboratorio onde transformo aprendizado continuo em produtos, modulos, automacoes e documentacao.
 - Minha atuacao passa principalmente por fintech, e-commerce, plataformas corporativas, cloud e produtividade de engenharia.
-
-## Projetos em destaque
-
-| Projeto | O que resolve | Tecnologias-chave |
-| --- | --- | --- |
-| [monorepo](https://github.com/mozgbrasil/monorepo) | Centraliza apps, servicos, templates, infraestrutura e governanca em um workspace multi-stack. | Node.js, Python, Go, PHP, Helm, Terraform, GitHub Actions |
-| [Node Next Platform](https://github.com/mozgbrasil/monorepo/tree/main/projects/node-next) | Plataforma Nx com multiplos apps Next, broker de autenticacao, contratos cross-app e stack Docker local. | Next.js, Nx, Playwright, Docker |
-| [python-lumiere-synapse](https://github.com/mozgbrasil/monorepo/tree/main/projects/python-lumiere-synapse) | Control plane local para automacao operacional, IA multimodal e pipelines com guardrails. | Python, SQLite, LM Studio, ComfyUI |
-| [bash-simple](https://github.com/mozgbrasil/monorepo/tree/main/projects/bash-simple) | Runtime shell governado para diagnostico, automacao e planos seguros de execucao. | Bash, Python helpers, JSONL runbook |
-| [node-monitoring](https://github.com/mozgbrasil/monorepo/tree/main/projects/node-monitoring) | Dashboard de monitoramento em tempo real com backend e frontend desacoplados. | Node.js, Express, WebSocket, Vite |
-| [node-web-components](https://github.com/mozgbrasil/monorepo/tree/main/projects/node-web-components) | Biblioteca de componentes reutilizaveis com Storybook e integracao em apps modernos. | Web Components, Lit, Storybook |
 
 ## Especialidades
 

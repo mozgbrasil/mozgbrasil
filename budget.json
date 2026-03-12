@@ -1,0 +1,14 @@
+[
+  {
+    "resourceSizes": [
+      {
+        "resourceType": "document",
+        "budget": 80000
+      },
+      {
+        "resourceType": "total",
+        "budget": 3000000
+      }
+    ]
+  }
+]

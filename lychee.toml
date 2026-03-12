@@ -1,0 +1,33 @@
+# Lychee configuration
+# Docs: https://github.com/lycheeverse/lychee#configuration
+
+# General options
+max_redirects = 10
+retry_wait_time = 3
+retries = 3
+timeout = 20
+
+# Accept additional HTTP status codes
+accept = [200, 204, 206, 429]
+
+# Exclusions
+exclude = [
+  "^mailto:",
+  "^tel:",
+  "^#",                # internal anchors
+  "^javascript:",
+  "^file://",          # local file URIs from generated markdown
+  "^chrome:",
+  "^edge:",
+  "^about:",
+  "localhost",
+  "127.0.0.1",
+  "img.shields.io",
+  "shields.io",
+  "streak-stats.demolab.com",
+  "stackblitz.com",
+  "developer.stackblitz.com",
+  "badgen.net",
+  "vercel.app",
+  "mozg.com.br/storybook/",   # provisionado futuramente
+]

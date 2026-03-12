@@ -2,16 +2,14 @@
 
 ## Project Context
 
-- name: `github-profile`
-- path: `projects/github-profile`
-- runtime: `nodejs`
-- matrix checks: format=`true`, lint=`true`, test=`true`
+- name: `mozgbrasil.github.io`
+- path: `projects/mozgbrasil.github.io`
+- runtime: `none`
+- matrix checks: format=`false`, lint=`false`, test=`false`
 
 ## Runtime Commands
 
-- `npm install`
-- `npm run lint`
-- `npm test`
+- `# projeto estático sem runtime de build local`
 
 ## CI Notes
 

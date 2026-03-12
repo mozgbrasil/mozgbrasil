@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marcio Amorim — Desenvolvedor Fullstack</title>
+    <meta
+      name="description"
+      content="Portfólio de Marcio — Desenvolvedor Fullstack. Projetos poliglotas em Java, Node.js e Python."
+    />
+    <meta name="author" content="Marcio Amorim" />
+
+    <!-- SEO / Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Marcio Amorim — Desenvolvedor Fullstack"
+    />
+    <meta
+      property="og:description"
+      content="Projetos poliglotas em Java, Node.js e Python."
+    />
+    <meta property="og:url" content="https://mozgbrasil.github.io/" />
+    <meta
+      property="og:image"
+      content="https://mozgbrasil.github.io/assets/icon-512.svg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Marcio Amorim — Desenvolvedor Fullstack"
+    />
+    <meta
+      name="twitter:description"
+      content="Projetos poliglotas em Java, Node.js e Python."
+    />
+    <meta
+      name="twitter:image"
+      content="https://mozgbrasil.github.io/assets/icon-512.svg"
+    />
+
+    <!-- PWA / Theming -->
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/icon-192.svg" />
+
+    <!-- Preload CSS for performance -->
+    <link rel="preload" href="/assets/styles.css" as="style" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Marcio Amorim",
+        "url": "https://mozgbrasil.github.io/",
+        "email": "mailto:suporte@mozg.com.br",
+        "jobTitle": "Desenvolvedor Fullstack",
+        "knowsAbout": ["Java", "Node.js", "Python", "Arquitetura", "DevOps"],
+        "sameAs": ["https://github.com/mozgbrasil"]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="container header">
+      <a class="brand" href="/">Marcio</a>
+      <nav class="nav">
+        <a href="#projetos">Projetos</a>
+        <a href="#skills">Skills</a>
+        <a href="#contato">Contato</a>
+        <button id="theme-toggle" class="btn-ghost" aria-label="Alternar tema">
+          🌓
+        </button>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Desenvolvedor Fullstack</h1>
+        <p>
+          Construo produtos rápidos, acessíveis e escaláveis. Poliglota: Java,
+          Node.js e Python.
+        </p>
+        <div class="actions">
+          <a
+            class="btn"
+            href="https://github.com/mozgbrasil?tab=repositories"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          <a class="btn-secondary" href="#projetos">Ver projetos</a>
+        </div>
+      </section>
+
+      <section id="projetos" class="section">
+        <h2>Projetos em Destaque</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Monorepo</h3>
+            <p>
+              Infra + templates para projetos poliglotas, CI/CD e
+              observabilidade.
+            </p>
+            <a
+              class="link"
+              href="https://github.com/mozgbrasil?tab=repositories"
+              target="_blank"
+              rel="noopener"
+              >Abrir no GitHub →</a
+            >
+          </article>
+          <article class="card">
+            <h3>APIs e Microsserviços</h3>
+            <p>
+              APIs em Deno/.NET/Java/Node/PHP/Python/Ruby/Rust com testes,
+              métricas e deploy simples.
+            </p>
+            <a
+              class="link"
+              href="https://github.com/mozgbrasil"
+              target="_blank"
+              rel="noopener"
+              >Repositórios →</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <section id="dashboards" class="section">
+        <h2>Dashboards Interativos</h2>
+        <div class="grid-dashboards">
+          <img
+            src="https://raw.githubusercontent.com/mozgbrasil/mozgbrasil/refs/heads/main/metrics/streak_3d_live.svg"
+            alt="Heatmap 3D Live"
+          />
+          <img
+            src="https://raw.githubusercontent.com/mozgbrasil/mozgbrasil/refs/heads/main/metrics/commits_3d_live.svg"
+            alt="Commits 3D Live Streaming"
+          />
+          <img
+            src="https://raw.githubusercontent.com/mozgbrasil/mozgbrasil/refs/heads/main/metrics/pr_issue_chart.svg"
+            alt="PRs & Issues"
+          />
+          <img
+            src="https://raw.githubusercontent.com/mozgbrasil/mozgbrasil/refs/heads/main/metrics/metrics.svg"
+            alt="Metrics Overview"
+          />
+          <img
+            src="https://raw.githubusercontent.com/mozgbrasil/mozgbrasil/refs/heads/main/metrics/wakatime.svg"
+            alt="WakaTime"
+          />
+        </div>
+        <pre></pre>
+      </section>
+
+      <section id="skills" class="section">
+        <h2>Skills</h2>
+        <ul class="tags">
+          <li>Java</li>
+          <li>Node.js</li>
+          <li>Python</li>
+          <li>Docker</li>
+          <li>CI/CD</li>
+          <li>Cloud</li>
+        </ul>
+      </section>
+
+      <section id="contato" class="section">
+        <h2>Contato</h2>
+        <p>📫 suporte@mozg.com.br</p>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <small
+        >© <span id="year"></span> Marcio •
+        <a href="/sitemap.xml">sitemap</a></small
+      >
+    </footer>
+
+    <script defer src="/assets/script.js"></script>
+    <script>
+      // Atualiza ano no rodapé
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

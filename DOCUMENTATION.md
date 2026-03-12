@@ -1,131 +1,164 @@
-# Documentação do GitHub Profile Automation
+# Documentação do Site Mozg Brasil
 
-## 📌 Visão Geral
+## 🌐 Visão Geral
 
-O GitHub Profile Automation é uma ferramenta poderosa para aprimorar e
-automatizar o perfil do GitHub com métricas dinâmicas, conquistas e
-visualizações interativas. Ele é projetado para funcionar como um projeto
-autônomo dentro do monorepo, utilizando GitHub Actions para atualizações
-periódicas.
+O site da Mozg Brasil é construído com tecnologias web modernas para fornecer
+uma experiência rápida, acessível e responsiva. Este documento descreve a
+estrutura, configuração e processos de desenvolvimento do site.
 
 ## 🏗️ Estrutura do Projeto
 
 ```
-github-profile/
-├── .github/
-│   └── workflows/      # Fluxos de trabalho do GitHub Actions
-├── metrics/           # Dados e métricas coletadas
-├── scripts/           # Scripts de automação
-│   ├── achievements.js # Lógica de conquistas
-│   ├── metrics.js     # Coleta de métricas
-│   └── update.js      # Atualização do README
-├── .env.example      # Exemplo de variáveis de ambiente
-├── package.json      # Dependências e scripts
-└── README.md         # Documentação principal
+mozgbrasil.github.io/
+├── .github/           # Configurações do GitHub
+│   └── workflows/     # Fluxos de CI/CD
+├── assets/            # Arquivos estáticos
+│   ├── css/          # Folhas de estilo
+│   ├── img/          # Imagens e ícones
+│   └── js/           # Scripts JavaScript
+├── .nojekyll         # Desativa o processamento Jekyll
+├── index.html        # Página principal
+├── manifest.json     # Configuração do PWA
+└── sitemap.xml      # Mapa do site para SEO
 ```
 
-## 🚀 Funcionalidades Principais
+## 🛠️ Tecnologias Utilizadas
 
-### 1. Métricas Automatizadas
+- **HTML5** - Estrutura semântica
+- **CSS3** - Estilização responsiva
+- **JavaScript** - Interatividade
+- **GitHub Pages** - Hospedagem
+- **GitHub Actions** - CI/CD
+- **PWA** - Suporte a Progressive Web App
 
-- Estatísticas de contribuição
-- Gráficos de atividade
-- Análise de linguagens
-- Metas de contribuição
-
-### 2. Sistema de Conquistas
-
-- Badges por marcos atingidos
-- Desafios semanais/mensais
-- Recompensas por consistência
-
-### 3. Dashboards Interativos
-
-- Visualização de commits
-- Análise de produtividade
-- Comparativo com períodos anteriores
-
-## ⚙️ Configuração
+## 🚀 Guia de Desenvolvimento
 
 ### Pré-requisitos
 
-- Node.js 16+
-- Conta no GitHub
-- Token de acesso pessoal com permissões:
-  - `repo` (para repositórios privados)
-  - `user:email`
-  - `read:user`
+- Navegador moderno (Chrome, Firefox, Safari, Edge)
+- Git para controle de versão
+- Node.js (opcional para desenvolvimento local)
+- Editor de código (VS Code recomendado)
 
-### Instalação
+### Configuração do Ambiente
 
 1. **Clone o repositório**
 
    ```bash
    git clone https://github.com/mozgbrasil/monorepo.git
-   cd monorepo/projects/github-profile
+   cd monorepo/projects/mozgbrasil.github.io
    ```
 
-2. **Instale as dependências**
+2. **Servidor de desenvolvimento local**
 
    ```bash
-   npm install
+   # Usando Python (simples)
+   python3 -m http.server 8000
+
+   # Ou com live-server (instale via npm)
+   npx live-server --port=8000
    ```
 
-3. **Configure as variáveis de ambiente**
+3. **Acesse** Abra `http://localhost:8000` no navegador.
+
+## 🛠️ Estrutura de Arquivos
+
+### Páginas Principais
+
+- `index.html` - Página inicial
+- `404.html` - Página de erro 404
+
+### Assets
+
+- `assets/css/` - Estilos CSS
+- `assets/js/` - Scripts JavaScript
+- `assets/img/` - Imagens e ícones
+
+### Configurações
+
+- `.nojekyll` - Desativa o processamento Jekyll
+- `robots.txt` - Instruções para robôs de busca
+- `sitemap.xml` - Mapa do site para SEO
+- `manifest.webmanifest` - Configuração do PWA
+
+## 🔄 Processo de Deploy
+
+O site é automaticamente implantado no GitHub Pages a cada push para o branch
+`main`.
+
+### Deploy Manual
+
+1. Faça commit das alterações:
+
    ```bash
-   cp .env.example .env
-   # Edite o .env com suas credenciais
+   git add .
+   git commit -m "Atualizações no site"
+   git push origin main
    ```
 
-## 🛠️ Uso
+2. O GitHub Actions irá:
+   - Construir o site
+   - Executar testes
+   - Fazer deploy para o GitHub Pages
 
-### Comandos Disponíveis
+## 🧪 Testes
+
+### Testes Manuais
+
+- [ ] Verificar responsividade
+- [ ] Testar em diferentes navegadores
+- [ ] Validar HTML/CSS
+- [ ] Testar funcionalidades JavaScript
+
+### Testes Automatizados
 
 ```bash
-# Executar coleta de métricas
-npm run metrics
+# Executar validação HTML
+npm run test:html
 
-# Atualizar README com as métricas mais recentes
-npm run update
+# Validar CSS
+npm run test:css
 
-# Executar testes
-npm test
-
-# Verificar qualidade do código
-npm run lint
+# Testes de acessibilidade
+npm run test:a11y
 ```
 
-### GitHub Actions
+## 🔍 SEO e Acessibilidade
 
-O fluxo de trabalho está configurado para rodar diariamente. Você pode
-personalizar a frequência em `.github/workflows/update.yml`.
+### Meta Tags
 
-## 🔄 Atualização
+- Título e descrição otimizados
+- Open Graph para compartilhamento
+- Twitter Cards
 
-### Adicionando Novas Métricas
+### Acessibilidade
 
-1. Crie um novo script em `scripts/`
-2. Adicione a lógica de coleta de dados
-3. Atualize `update.js` para incluir as novas métricas
-4. Atualize o template do README se necessário
+- Navegação por teclado
+- Contraste de cores adequado
+- Textos alternativos em imagens
+- ARIA labels onde necessário
 
-### Personalizando Conquistas
+## 🔒 Segurança
 
-Edite `scripts/achievements.js` para adicionar ou modificar conquistas. Cada
-conquista deve ter:
+### Headers de Segurança
 
-- Um identificador único
-- Título e descrição
-- Condição para desbloqueio
-- Badge personalizado (opcional)
+- CSP (Content Security Policy)
+- HSTS
+- XSS Protection
+- Frame Options
+
+### Boas Práticas
+
+- Não armazenar dados sensíveis no código
+- Usar HTTPS em todas as requisições
+- Manter dependências atualizadas
 
 ## 🤝 Contribuição
 
 1. Faça um fork do repositório
-2. Crie uma branch para sua feature (`git checkout -b feature/incrivel`)
-3. Commit suas alterações (`git commit -am 'Adiciona feature incrível'`)
-4. Push para a branch (`git push origin feature/incrivel`)
-5. Abra um Pull Request
+2. Crie uma branch para sua feature
+3. Faça commit das alterações
+4. Envie um Pull Request
 
 ## 📄 Licença
 

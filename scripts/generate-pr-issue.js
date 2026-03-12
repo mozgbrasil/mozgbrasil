@@ -5,7 +5,7 @@ const axios = require('axios');
 const { execSync } = require('child_process');
 
 const user = 'mozgbrasil';
-const repo = 'mozgbrasil.github.io';
+const repo = 'mozgbrasil';
 
 // garante caminho relativo ao script
 const outputDir = path.join(__dirname, '..', 'metrics');

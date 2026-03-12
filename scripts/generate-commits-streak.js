@@ -3,7 +3,7 @@ const fs = require('fs');
 const axios = require('axios');
 
 const user = 'mozgbrasil';
-const repo = 'mozgbrasil.github.io';
+const repo = 'mozgbrasil';
 
 // garante caminho relativo ao script
 const outputDir = path.join(__dirname, '..', 'metrics');

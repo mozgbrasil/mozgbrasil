@@ -3,9 +3,9 @@ set -euo pipefail
 
 build_banner
 
-echo "📦 environment"
-
 echo "📦 install"
+
+npm install
 
 echo "📦 format"
 
@@ -13,6 +13,8 @@ echo "📦 lint"
 
 echo "📦 test"
 
+npm test || echo '⚠️ Tests failed or not defined'
+
 echo "📦 build"
 
-echo "📦 commands"
+# npm run build

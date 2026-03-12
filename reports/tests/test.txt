@@ -1,1 +1,6 @@
-ℹ️ Test desabilitado na matriz
+
+> github-profile@1.0.0 test
+> node scripts/ci-checks.js test
+
+Lint passed for 5 script file(s).
+Smoke test passed.

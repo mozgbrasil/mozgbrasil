@@ -1,4 +1,4 @@
-name: "mozgbrasil.github.io CI/CD \U0001F680"
+name: "github-profile CI/CD \U0001F680"
 on:
   push:
     branches:
@@ -30,40 +30,125 @@ jobs:
           echo "Tentando autenticar..."
           git ls-remote $REMOTE_URL
           echo "Autenticação bem-sucedida!"
-  linkChecker:
+  lowlighter-metrics:
     needs:
       - test
-    name: "lycheeverse/lychee \U0001F517"
+    name: "lowlighter/metrics \U0001F5BC️"
     runs-on: self-hosted
-    permissions:
-      issues: write # required for peter-evans/create-issue-from-file
     steps:
-      - uses: actions/checkout@v4
-      - name: Link Checker
-        id: lychee
-        uses: lycheeverse/lychee-action@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
-          fail: false
-      - name: Create Issue From File
-        if: steps.lychee.outputs.exit_code != 0
-        uses: peter-evans/create-issue-from-file@v5
+          fetch-depth: 0
+      - name: "\U0001F5C3️ Base content - Default metrics"
+        uses: lowlighter/metrics@master
         with:
-          title: Link Checker Report
-          content-filepath: ./lychee/out.md
-          labels: report, automated issue
-  lighthouse:
+          filename: metrics/metrics.base.svg
+          token: ${{ secrets.GH_TOKEN }}
+          base: header, activity, community, repositories, metadata
+          output_action: commit
+          committer_branch: main
+          committer_message: 'chore(metrics): update metrics [skip ci]'
+          delay: 120
+          user: mozgbrasil
+          plugins_errors_fatal: yes
+        if: ${{ success() || failure() }}
+      - name: ⏰ WakaTime - WakaTime
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics/metrics.plugin.wakatime.svg
+          token: ${{ secrets.GH_TOKEN }}
+          base: ''
+          plugin_wakatime: yes
+          plugin_wakatime_sections: time, projects, projects-graphs, languages, languages-graphs, editors, os
+          plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
+          output_action: commit
+          committer_branch: main
+          committer_message: 'chore(metrics): update metrics [skip ci]'
+          delay: 120
+          user: mozgbrasil
+          plugins_errors_fatal: yes
+        if: ${{ success() || failure() }}
+  gh-metrics:
     needs:
       - test
-    name: "treosh/lighthouse-ci \U0001F6A6"
+    name: "Github metrics \U0001F5BC️"
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v4
-      - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v12
+      - name: Checkout Repository
+        uses: actions/checkout@v4
         with:
-          urls: |
-            https://mozgbrasil.github.io/
-            https://mozg.com.br/
-          budgetPath: ./budget.json # test performance budgets
-          uploadArtifacts: true # save results as an action artifacts
-          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+          fetch-depth: 0
+      # - name: Check for Changes in Scripts or Dependencies
+      #   id: changes
+      #   run: |
+      #     echo "Checking for changes in projects/github-profile..."
+      #     # git fetch origin main --depth=1
+      #     # CHANGED=$(git diff --name-only origin/main projects/github-profile/package.json projects/github-profile/package-lock.json projects/github-profile/scripts/)
+      #     # echo "changed=$CHANGED" >> $GITHUB_OUTPUT
+      - name: Setup Node.js
+        # if: steps.changes.outputs.changed != ''
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Install Dependencies
+        # if: steps.changes.outputs.changed != ''
+        run: npm install
+        working-directory: .
+      - name: Run Node Scripts (PR/Issues, Commits, README)
+        # if: steps.changes.outputs.changed != ''
+        run: |
+          node scripts/update-metrics.js
+        working-directory: .
+      - name: Commit and Push Generated Images
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main
+          git checkout main
+          git pull --rebase origin main
+
+          git add metrics/*.png || echo "No images to add"
+          git add metrics/*.svg || echo "No SVGs to add"
+
+          if git diff --cached --quiet; then
+            echo "✅ Nenhuma alteração detectada, nada a commitar."
+          else
+            git commit -m "chore(metrics): update generated images [skip ci]"
+            git push origin main
+          fi
+  githubocto-repo-visualizer:
+    needs:
+      - test
+    name: "githubocto/repo-visualizer \U0001F5BC️"
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # importante para ter histórico completo do Git
+      - name: Update diagram
+        uses: githubocto/repo-visualizer@0.7.1
+        with:
+          output_file: metrics/diagram.svg
+          excluded_paths: dist,node_modules
+  readme-youtube:
+    needs:
+      - test
+    name: "DenverCoder1/github-readme-youtube-cards \U0001F5BC️"
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # importante para ter histórico completo do Git
+      - name: Ensure branch is up to date
+        run: |
+          git fetch origin main
+          git checkout main
+          git pull --rebase origin main
+      - name: action - youtube cards
+        uses: DenverCoder1/github-readme-youtube-cards@main
+        with:
+          channel_id: '@mozgbrasil'

@@ -8,7 +8,7 @@
 [![Website](https://img.shields.io/badge/Website-mozg.com.br-1f6feb?style=for-the-badge&logo=googlechrome&logoColor=white)](https://mozg.com.br/)
 [![Curriculo](https://img.shields.io/badge/Curriculo-PDF-c75146?style=for-the-badge&logo=readthedocs&logoColor=white)](https://mozg.com.br/assets/curriculum.pdf)
 [![Email](https://img.shields.io/badge/Email-mozgbrasil@gmail.com-ea4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mozgbrasil@gmail.com)
-[![Monorepo](https://img.shields.io/badge/Monorepo-Multi--stack-111827?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mozgbrasil/monorepo)
+[![Monorepo](https://img.shields.io/badge/Monorepo-Multi--stack-111827?style=for-the-badge&logo=github&logoColor=white)](#)
 
 Desenvolvo software desde 1999 e hoje concentro meu trabalho em arquitetura de software, plataformas full stack, automacao operacional, observabilidade e produtos digitais multi-stack.
 
@@ -76,3 +76,5 @@ O objetivo nao e apenas demonstrar stack. E praticar arquitetura, operacao, auto
 - **Email:** [mozgbrasil@gmail.com](mailto:mozgbrasil@gmail.com)
 
 > Gosto de software que resolve problemas reais, escala com clareza e continua simples de operar.
+
+![Profile Views](https://komarev.com/ghpvc/?username=mozgbrasil&color=blue&style=flat-square)

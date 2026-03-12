@@ -5,7 +5,7 @@ build_banner
 
 echo "📦 install"
 
-npm install --legacy-peer-deps
+npm install
 
 echo "📦 format"
 

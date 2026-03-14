@@ -7,9 +7,10 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mozgbrasil/)
 [![Website](https://img.shields.io/badge/Website-mozg.com.br-1f6feb?style=for-the-badge&logo=googlechrome&logoColor=white)](https://mozg.com.br/)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-mozgbrasil.github.io-24292f?style=for-the-badge&logo=githubpages&logoColor=white)](https://mozgbrasil.github.io/)
+[![Google Play](https://img.shields.io/badge/Google%20Play-Mozg%20Apps-34a853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/dev?id=8685510812208806498)
 [![Curriculo](https://img.shields.io/badge/Curriculo-PDF-c75146?style=for-the-badge&logo=readthedocs&logoColor=white)](https://mozg.com.br/assets/curriculum.pdf)
 [![Email](https://img.shields.io/badge/Email-mozgbrasil@gmail.com-ea4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mozgbrasil@gmail.com)
-[![Monorepo](https://img.shields.io/badge/Monorepo-Multi--stack-111827?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mozgbrasil/monorepo)
+[![Monorepo](https://img.shields.io/badge/Monorepo-Privado-111827?style=for-the-badge&logo=github&logoColor=white)](https://mozg.com.br/projetos/monorepo)
 
 Desenvolvo software desde 1999 e hoje concentro meu trabalho em arquitetura de software, plataformas full stack, automacao operacional, observabilidade e produtos digitais multi-stack.
 Tambem mantenho um portal complementar em GitHub Pages com perfil, redes e sinais recentes do trabalho em [mozgbrasil.github.io](https://mozgbrasil.github.io/).
@@ -57,6 +58,47 @@ O **MOZG** e o meu laboratorio de software desde 2016. E onde experimento stacks
 No monorepo eu mantenho, documento e evoluo projetos em Node.js, Python, Go, Java, PHP, Ruby, Rust, Deno, Bash, Perl, C++ e .NET, alem da camada de infraestrutura com Helm Charts, Terraform, monitoramento e deploy para GitHub Pages.
 
 O objetivo nao e apenas demonstrar stack. E praticar arquitetura, operacao, automacao, padronizacao de qualidade e evolucao continua em um ambiente unico.
+O workspace fonte e privado no GitHub; a camada publica aparece nos sites, apps, dossies e artefatos derivados do laboratorio.
+
+## Sinais publicos e operacionais
+
+- **Website principal:** [mozg.com.br](https://mozg.com.br/)
+- **Portal complementar:** [mozgbrasil.github.io](https://mozgbrasil.github.io/)
+- **Dossier do workspace privado:** [mozg.com.br/projetos/monorepo](https://mozg.com.br/projetos/monorepo)
+- **Dossier de UI publica:** [mozg.com.br/projetos/node-web-components](https://mozg.com.br/projetos/node-web-components)
+- **Storybook publicado:** [mozgbrasil.github.io/node-web-components-storybook](https://mozgbrasil.github.io/node-web-components-storybook/?path=/docs/catalog-explorer--docs)
+- **Pacote npm:** [node-web-components](https://www.npmjs.com/package/node-web-components)
+- **Perfil GitHub:** [github.com/mozgbrasil](https://github.com/mozgbrasil)
+
+## Ecossistema mobile
+
+A presenca publica do laboratorio tambem inclui distribuicao Android com rastreabilidade entre site, portal, app e operacao local.
+
+- **Perfil oficial do desenvolvedor:** <https://play.google.com/store/apps/dev?id=8685510812208806498>
+- **Mozg TWA** — app de marca empacotado com `Bubblewrap`, conectado ao website principal e pensado para distribuicao rapida no Android.
+- **Mozg Híbrido** — app Angular voltado para operação, catálogo e continuidade de produto em ambiente mobile.
+
+### Origem de código e publicação
+
+- **Superfícies web e identidade visual:** `projects/node-vitepress` (`mozg.com.br`) e `projects/mozgbrasil.github.io` (portal complementar).
+- **Base de app e operação de catálogo:** `projects/node-angular`.
+- **Design system e distribuição pública:** `projects/node-web-components`.
+- **Rotina operacional e preparo de release:** `projects/zsh-enterprise`.
+
+### Catálogo público
+
+- **Mozg TWA (Bubblewrap):** <https://play.google.com/store/search?q=site:www.mozg.com.br+Mozg+TWA>
+- **Mozg Híbrido (Angular):** <https://play.google.com/store/search?q=site:www.mozg.com.br+Mozg+H%C3%ADbrido>
+
+Esses canais formam um conjunto unico: o site principal posiciona a narrativa,
+o GitHub Profile sintetiza a identidade tecnica no proprio GitHub e o portal em
+GitHub Pages complementa com links, portfolio e sinais recentes.
+
+## Governanca do perfil
+
+- O README deve permanecer coerente com `projects/mozgbrasil.github.io`.
+- Mudancas estruturais devem preservar links principais, metadados publicos e a narrativa profissional central.
+- O projeto possui checks locais para scripts e validacao das secoes essenciais da documentacao.
 
 ## GitHub Stats
 

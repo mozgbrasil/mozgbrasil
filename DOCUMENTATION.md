@@ -1,144 +1,83 @@
-# Documentação do GitHub Profile Automation
+# Documentacao do GitHub Profile
 
-## 📌 Visão Geral
+## Visao geral
 
-O GitHub Profile Automation é uma ferramenta poderosa para aprimorar e
-automatizar o perfil do GitHub com métricas dinâmicas, conquistas e
-visualizações interativas. Ele é projetado para funcionar como um projeto
-autônomo dentro do monorepo, utilizando GitHub Actions para atualizações
-periódicas.
+`github-profile` concentra o material publico usado para o perfil do GitHub:
+README principal, scripts de atualizacao de metricas e checks locais de
+consistencia. O projeto funciona como um ponto de resumo da identidade tecnica
+publica e precisa permanecer coerente com `mozg.com.br` e
+`mozgbrasil.github.io`.
 
-## 🏗️ Estrutura do Projeto
+## Estrutura real do projeto
 
-```
+```text
 github-profile/
-├── .github/
-│   └── workflows/      # Fluxos de trabalho do GitHub Actions
-├── metrics/           # Dados e métricas coletadas
-├── scripts/           # Scripts de automação
-│   ├── achievements.js # Lógica de conquistas
-│   ├── metrics.js     # Coleta de métricas
-│   └── update.js      # Atualização do README
-├── .env.example      # Exemplo de variáveis de ambiente
-├── package.json      # Dependências e scripts
-└── README.md         # Documentação principal
+├── README.md
+├── DOCUMENTATION.md
+├── package.json
+├── scripts/
+│   ├── build.sh
+│   ├── ci-checks.js
+│   ├── deploy.sh
+│   ├── generate-commits-streak.js
+│   ├── generate-pr-issue.js
+│   ├── startup.sh
+│   ├── update-metrics.js
+│   └── update-readme.js
+└── metrics/
 ```
 
-## 🚀 Funcionalidades Principais
+## Responsabilidades
 
-### 1. Métricas Automatizadas
+- manter o README do perfil claro, legivel e coerente com os outros canais publicos
+- reunir scripts de apoio para geracao ou atualizacao de metricas
+- oferecer checks locais simples para scripts, documentacao e baseline estrutural
 
-- Estatísticas de contribuição
-- Gráficos de atividade
-- Análise de linguagens
-- Metas de contribuição
-
-### 2. Sistema de Conquistas
-
-- Badges por marcos atingidos
-- Desafios semanais/mensais
-- Recompensas por consistência
-
-### 3. Dashboards Interativos
-
-- Visualização de commits
-- Análise de produtividade
-- Comparativo com períodos anteriores
-
-## ⚙️ Configuração
-
-### Pré-requisitos
-
-- Node.js 16+
-- Conta no GitHub
-- Token de acesso pessoal com permissões:
-  - `repo` (para repositórios privados)
-  - `user:email`
-  - `read:user`
-
-### Instalação
-
-1. **Clone o repositório**
-
-   ```bash
-   git clone https://github.com/mozgbrasil/monorepo.git
-   cd monorepo/projects/github-profile
-   ```
-
-2. **Instale as dependências**
-
-   ```bash
-   npm install
-   ```
-
-3. **Configure as variáveis de ambiente**
-   ```bash
-   cp .env.example .env
-   # Edite o .env com suas credenciais
-   ```
-
-## 🛠️ Uso
-
-### Comandos Disponíveis
+## Comandos locais
 
 ```bash
-# Executar coleta de métricas
-npm run metrics
-
-# Atualizar README com as métricas mais recentes
-npm run update
-
-# Executar testes
-npm test
-
-# Verificar qualidade do código
+npm install
+npm run format:check
 npm run lint
+npm test
 ```
 
-### GitHub Actions
+## O que os checks validam
 
-O fluxo de trabalho está configurado para rodar diariamente. Você pode
-personalizar a frequência em `.github/workflows/update.yml`.
+- existencia dos arquivos obrigatorios
+- parse basico dos scripts JavaScript via `node --check`
+- coerencia entre `AGENTS.md` e `CLAUDE.md`
+- presenca das secoes essenciais no `README.md` e na `DOCUMENTATION.md`
 
-## 🔄 Atualização
+## Coerencia entre canais
 
-### Adicionando Novas Métricas
+Os seguintes pontos devem se manter alinhados:
 
-1. Crie um novo script em `scripts/`
-2. Adicione a lógica de coleta de dados
-3. Atualize `update.js` para incluir as novas métricas
-4. Atualize o template do README se necessário
+- `projects/github-profile/README.md`
+- `projects/mozgbrasil.github.io/index.html`
+- `projects/mozgbrasil.github.io/README.md`
 
-### Personalizando Conquistas
+O objetivo nao e duplicar texto palavra por palavra, e sim manter a mesma
+linguagem, os mesmos links principais e o mesmo nivel de metadados publicos.
 
-Edite `scripts/achievements.js` para adicionar ou modificar conquistas. Cada
-conquista deve ter:
+O workspace fonte do monorepo e privado no GitHub. Por isso, as superficies
+publicas devem sempre privilegiar:
 
-- Um identificador único
-- Título e descrição
-- Condição para desbloqueio
-- Badge personalizado (opcional)
+- sites publicados;
+- perfil GitHub publico;
+- perfil de desenvolvedor no Google Play;
+- dossiers publicos em `mozg.com.br/projetos/*`.
 
-## 🤝 Contribuição
+## Presenca mobile de desenvolvedor
 
-1. Faça um fork do repositório
-2. Crie uma branch para sua feature (`git checkout -b feature/incrivel`)
-3. Commit suas alterações (`git commit -am 'Adiciona feature incrível'`)
-4. Push para a branch (`git push origin feature/incrivel`)
-5. Abra um Pull Request
+As informacoes de aplicativo tambem devem permanecer coerentes entre:
 
-## 📄 Licença
+- `projects/github-profile/README.md`
+- `projects/mozgbrasil.github.io/README.md`
+- `projects/node-vitepress` (seções de presença/projetos)
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo
-[LICENSE](LICENSE) para detalhes.
+Checklist recomendado:
 
-## 📞 Suporte
-
-Para suporte, por favor abra uma
-[issue](https://github.com/mozgbrasil/monorepo/issues) ou entre em contato via
-[email](mailto:suporte@mozg.com.br).
-
----
-
-📅 **Última Atualização**: Setembro de 2025\
-🏷 **Versão**: 1.0.0
+- manter o link do perfil de desenvolvedor do Google Play em todas as superfícies
+- distinguir o app **Mozg TWA** (Bubblewrap) e o **Mozg Híbrido** (Angular) como ativos ativos
+- evitar links para `github.com/mozgbrasil/monorepo` em conteúdo público

@@ -1,5 +1,5 @@
 
-> github-profile@1.0.0 test
+> @mozgbrasil/github-profile@1.0.0 test
 > node scripts/ci-checks.js test
 
 Lint passed for 5 script file(s).

@@ -1,10 +1,10 @@
 {
-  "name": "github-profile",
+  "name": "@mozgbrasil/github-profile",
   "version": "1.0.0",
   "description": "Scripts to generate GitHub profile metrics and update README",
   "main": "index.js",
   "scripts": {
-    "postinstall": "echo 'postinstall github-profile'",
+    "postinstall": "echo \"postinstall $npm_package_name\"",
     "lint": "node scripts/ci-checks.js lint",
     "lint:fix": "node scripts/ci-checks.js lint",
     "format:check": "node scripts/ci-checks.js format",

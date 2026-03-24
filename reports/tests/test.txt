@@ -3,10 +3,10 @@
 > node scripts/ci-checks.js test
 
 Lint passed for 6 script file(s).
-✔ README keeps public profile sections and links (1.195123ms)
-✔ documentation keeps local commands and test contract (0.309949ms)
-✔ profile surface snapshot keeps request metadata contract (0.220282ms)
-✔ build script executes the documented phases (0.21431ms)
+✔ README keeps public profile sections and links (1.06665ms)
+✔ documentation keeps local commands and test contract (0.279162ms)
+✔ profile surface snapshot keeps request metadata contract (0.200442ms)
+✔ build script executes the documented phases (0.190224ms)
 ℹ tests 4
 ℹ suites 0
 ℹ pass 4
@@ -14,6 +14,6 @@ Lint passed for 6 script file(s).
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 68.610444
+ℹ duration_ms 56.857087
 Unit tests passed for 1 file(s).
 Smoke test passed.

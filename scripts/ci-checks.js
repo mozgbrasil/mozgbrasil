@@ -57,12 +57,36 @@ function lintScripts() {
   console.log(`Lint passed for ${scriptFiles.length} script file(s).`);
 }
 
+function runUnitTests() {
+  const testsDir = path.join(projectRoot, 'tests');
+  if (!fs.existsSync(testsDir)) {
+    fail('Missing tests/ directory.');
+  }
+
+  const testFiles = fs
+    .readdirSync(testsDir)
+    .filter((file) => file.endsWith('.test.js'))
+    .sort((left, right) => left.localeCompare(right))
+    .map((file) => path.join('tests', file));
+
+  if (!testFiles.length) {
+    fail('No .test.js files found in tests/.');
+  }
+
+  cp.execFileSync(process.execPath, ['--test', ...testFiles], {
+    cwd: projectRoot,
+    stdio: 'inherit',
+  });
+  console.log(`Unit tests passed for ${testFiles.length} file(s).`);
+}
+
 function smokeTest() {
   checkFilesExist([
     'README.md',
     'DOCUMENTATION.md',
     'AGENTS.md',
     'CLAUDE.md',
+    'scripts/profile-surface.js',
     'scripts/update-metrics.js',
     'scripts/generate-pr-issue.js',
     'scripts/generate-commits-streak.js',
@@ -81,14 +105,29 @@ function smokeTest() {
     'https://www.npmjs.com/package/node-web-components',
     'https://mozgbrasil.github.io/',
     'workspace fonte e privado no GitHub',
+    'request_id',
+    'x_request_timestamp',
+    'x_request_path',
+    'x_request_method',
   ]);
   checkRequiredSnippets('DOCUMENTATION.md', [
     '## Estrutura real do projeto',
     '## Comandos locais',
     '## O que os checks validam',
     'projects/mozgbrasil.github.io/index.html',
+    'request_id',
+    'x_request_timestamp',
+    'x_request_path',
+    'x_request_method',
+  ]);
+  checkRequiredSnippets('scripts/profile-surface.js', [
+    'request_id',
+    'x_request_timestamp',
+    'x_request_path',
+    'x_request_method',
   ]);
   lintScripts();
+  runUnitTests();
   console.log('Smoke test passed.');
 }
 

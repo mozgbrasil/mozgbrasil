@@ -2,4 +2,4 @@
 > @mozgbrasil/github-profile@1.0.0 lint
 > node scripts/ci-checks.js lint
 
-Lint passed for 5 script file(s).
+Lint passed for 6 script file(s).

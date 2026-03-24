@@ -1,17 +1,37 @@
 {
   "name": "@mozgbrasil/github-profile",
   "version": "1.0.0",
-  "description": "Scripts to generate GitHub profile metrics and update README",
+  "description": "Public GitHub profile and editorial contract for the MOZG laboratory identity surface.",
   "main": "index.js",
+  "packageManager": "npm@11.6.1",
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=11.0.0"
+  },
+  "directories": {
+    "doc": ".",
+    "test": "tests"
+  },
+  "config": {
+    "profileSurface": "github-profile",
+    "profilePortal": "https://mozgbrasil.github.io/",
+    "primaryWebsite": "https://mozg.com.br/"
+  },
   "scripts": {
     "postinstall": "echo \"postinstall $npm_package_name\"",
+    "install:deps": "npm install",
+    "matrix:check": "bash scripts/build.sh check-only",
+    "surface:json": "node scripts/profile-surface.js",
     "lint": "node scripts/ci-checks.js lint",
     "lint:fix": "node scripts/ci-checks.js lint",
     "format:check": "node scripts/ci-checks.js format",
     "format": "node scripts/ci-checks.js format",
-    "test": "node scripts/ci-checks.js test"
+    "test": "node scripts/ci-checks.js test",
+    "check": "npm run format:check && npm run lint && npm test",
+    "check:full": "bash scripts/build.sh all",
+    "ci": "bash scripts/build.sh check-only"
   },
-  "author": "",
+  "author": "Mozg Brasil",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.13.6"

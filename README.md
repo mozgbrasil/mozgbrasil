@@ -7,6 +7,10 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mozgbrasil/)
 [![Website](https://img.shields.io/badge/Website-mozg.com.br-1f6feb?style=for-the-badge&logo=googlechrome&logoColor=white)](https://mozg.com.br/)
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-mozgbrasil.github.io-24292f?style=for-the-badge&logo=githubpages&logoColor=white)](https://mozgbrasil.github.io/)
+[![Bluesky](https://img.shields.io/badge/Bluesky-@mozgbrasil.bsky.social-0285ff?style=for-the-badge&logo=bluesky&logoColor=white)](https://bsky.app/profile/mozgbrasil.bsky.social)
+[![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-mozgbrasil-db61a2?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/mozgbrasil)
+[![Google Developers](https://img.shields.io/badge/Google%20Developers-mozgbrasil-4285f4?style=for-the-badge&logo=google&logoColor=white)](https://developers.google.com/profile/u/mozgbrasil)
+[![OpenProfile](https://img.shields.io/badge/OpenProfile-mozgbrasil-111827?style=for-the-badge&logo=readme&logoColor=white)](https://openprofile.dev/profile/mozgbrasil)
 [![Google Play](https://img.shields.io/badge/Google%20Play-Mozg%20Apps-34a853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/dev?id=8685510812208806498)
 [![Curriculo](https://img.shields.io/badge/Curriculo-PDF-c75146?style=for-the-badge&logo=readthedocs&logoColor=white)](https://mozg.com.br/assets/curriculum.pdf)
 [![Email](https://img.shields.io/badge/Email-mozgbrasil@gmail.com-ea4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mozgbrasil@gmail.com)
@@ -41,6 +45,14 @@ Sao Paulo, Brasil
 - **Platform Engineering:** Docker, Kubernetes, Helm, Terraform, GitHub Actions, Prometheus, Grafana, ELK
 - **Arquitetura:** monolitos evolutivos, microservicos, BFF, APIs, automacao de workflow, quality gates e CI por matriz
 
+## Skills em foco
+
+- **Arquitetura e governanca:** desenho de plataformas, contratos pequenos, monorepos auditaveis e evolucao coerente entre stacks.
+- **Confiabilidade operacional:** quality gates, readiness, health checks, exportacao operacional, observabilidade e validacao fresh.
+- **Produto e frontends:** interfaces React, Next.js, Angular, Web Components, design systems e documentacao publica.
+- **Backends e integracoes:** APIs, autenticacao, workflows duraveis, integracoes corporativas e superfícies serverless.
+- **Automacao e IA aplicada:** fluxos assistidos por IA, automacao editorial, ferramentas operacionais e pipelines reproduziveis.
+
 ## MOZG
 
 O **MOZG** e o meu laboratorio de software desde 2016. E onde experimento stacks, publico modulos, documento padroes e transformo necessidades recorrentes em ativos reutilizaveis.
@@ -60,6 +72,11 @@ No monorepo eu mantenho, documento e evoluo projetos em Node.js, Python, Go, Jav
 O objetivo nao e apenas demonstrar stack. E praticar arquitetura, operacao, automacao, padronizacao de qualidade e evolucao continua em um ambiente unico.
 O workspace fonte e privado no GitHub; a camada publica aparece nos sites, apps, dossies e artefatos derivados do laboratorio.
 
+## Runtime local
+
+- Node.js `24.13.0`
+- `.tool-versions` fixa `nodejs 24.13.0` para manter o contrato local previsivel
+
 ## Sinais publicos e operacionais
 
 - **Website principal:** [mozg.com.br](https://mozg.com.br/)
@@ -69,6 +86,23 @@ O workspace fonte e privado no GitHub; a camada publica aparece nos sites, apps,
 - **Storybook publicado:** [mozgbrasil.github.io/node-web-components-storybook](https://mozgbrasil.github.io/node-web-components-storybook/?path=/docs/catalog-explorer--docs)
 - **Pacote npm:** [node-web-components](https://www.npmjs.com/package/node-web-components)
 - **Perfil GitHub:** [github.com/mozgbrasil](https://github.com/mozgbrasil)
+- **Bluesky:** [bsky.app/profile/mozgbrasil.bsky.social](https://bsky.app/profile/mozgbrasil.bsky.social)
+- **GitHub Sponsors:** [github.com/sponsors/mozgbrasil](https://github.com/sponsors/mozgbrasil)
+- **Google Developers Profile:** [developers.google.com/profile/u/mozgbrasil](https://developers.google.com/profile/u/mozgbrasil)
+- **OpenProfile:** [openprofile.dev/profile/mozgbrasil](https://openprofile.dev/profile/mozgbrasil)
+
+## Contrato operacional minimo
+
+- O perfil publica um envelope editorial de request com `request_id`, `x_request_timestamp`, `x_request_path` e `x_request_method`.
+- O snapshot pode ser lido localmente com `npm run surface:json`.
+- Como a superfície principal é estática, esse contrato descreve o contexto operacional do artefato publicado e mantém a trilha auditável para tooling local.
+
+## Perfis publicos oficiais
+
+- **Bluesky:** [bsky.app/profile/mozgbrasil.bsky.social](https://bsky.app/profile/mozgbrasil.bsky.social)
+- **GitHub Sponsors:** [github.com/sponsors/mozgbrasil](https://github.com/sponsors/mozgbrasil)
+- **Google Developers:** [developers.google.com/profile/u/mozgbrasil](https://developers.google.com/profile/u/mozgbrasil)
+- **OpenProfile:** [openprofile.dev/profile/mozgbrasil](https://openprofile.dev/profile/mozgbrasil)
 
 ## Ecossistema mobile
 
@@ -100,6 +134,28 @@ GitHub Pages complementa com links, portfolio e sinais recentes.
 - Mudancas estruturais devem preservar links principais, metadados publicos e a narrativa profissional central.
 - O projeto possui checks locais para scripts e validacao das secoes essenciais da documentacao.
 
+## Qualidade local
+
+```bash
+bash scripts/build.sh format-only
+bash scripts/build.sh lint-only
+bash scripts/build.sh test-only
+bash scripts/build.sh all
+npm run format:check
+npm run lint
+npm test
+bash scripts/build.sh check-only
+npm run surface:json
+npm run matrix:check
+```
+
+Os testes locais validam o contrato editorial do perfil, a presenca das secoes
+minimas, os links publicos prioritarios e a integridade dos scripts
+operacionais em `tests/00-profile-contract.test.js`.
+
+O gate local canonico e `bash scripts/build.sh all`.
+Quando voce quiser a agregacao via `package.json`, use `npm run check` ou `npm run check:full`.
+
 ## GitHub Stats
 
 <div align="center">
@@ -117,8 +173,12 @@ GitHub Pages complementa com links, portfolio e sinais recentes.
 - **Website:** [mozg.com.br](https://mozg.com.br/)
 - **GitHub Pages:** [mozgbrasil.github.io](https://mozgbrasil.github.io/)
 - **LinkedIn:** [linkedin.com/in/mozgbrasil](https://www.linkedin.com/in/mozgbrasil/)
+- **Bluesky:** [bsky.app/profile/mozgbrasil.bsky.social](https://bsky.app/profile/mozgbrasil.bsky.social)
 - **Curriculo:** [PDF](https://mozg.com.br/assets/curriculum.pdf)
 - **GitHub:** [github.com/mozgbrasil](https://github.com/mozgbrasil)
+- **GitHub Sponsors:** [github.com/sponsors/mozgbrasil](https://github.com/sponsors/mozgbrasil)
+- **Google Developers:** [developers.google.com/profile/u/mozgbrasil](https://developers.google.com/profile/u/mozgbrasil)
+- **OpenProfile:** [openprofile.dev/profile/mozgbrasil](https://openprofile.dev/profile/mozgbrasil)
 - **Email:** [mozgbrasil@gmail.com](mailto:mozgbrasil@gmail.com)
 
 > Gosto de software que resolve problemas reais, escala com clareza e continua simples de operar.

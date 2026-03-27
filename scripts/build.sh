@@ -21,6 +21,14 @@ lint-only)
 test-only)
   npm test
   ;;
+surface-only)
+  npm run surface:json >/dev/null
+  npm run surface:links >/dev/null
+  npm run surface:links:ndjson >/dev/null
+  ;;
+ready-only)
+  npm run surface:ready >/dev/null
+  ;;
 check-only)
   npm run check
   ;;
@@ -28,9 +36,11 @@ all)
   npm run format:check
   npm run lint
   npm test
+  npm run surface:json >/dev/null
+  npm run surface:ready >/dev/null
   ;;
 *)
-  echo "usage: bash scripts/build.sh [all|install-only|format-only|lint-only|test-only|check-only]" >&2
+  echo "usage: bash scripts/build.sh [all|install-only|format-only|lint-only|test-only|surface-only|ready-only|check-only]" >&2
   exit 2
   ;;
 esac

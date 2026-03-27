@@ -2,5 +2,6 @@
 > @mozgbrasil/github-profile@1.0.0 format:check
 > node scripts/ci-checks.js format
 
-Lint passed for 6 script file(s).
+Lint passed for 7 script file(s).
+Markdown structure check passed.
 Format check passed.

@@ -1,19 +1,75 @@
-const { execSync } = require('child_process');
+const fs = require('node:fs');
+const path = require('node:path');
 
-function generateMetrics() {
-  console.log('🚀 Generating PR & Issue metrics...');
-  execSync('node generate-pr-issue.js', { cwd: __dirname, stdio: 'inherit' });
+const {
+  buildSourceFingerprint,
+  createRequestContext,
+  ensureMetricsDir,
+  metricsDir,
+  parseCliArgs,
+} = require('./metrics-runtime');
+const { generatePullIssueMetrics } = require('./generate-pr-issue');
+const { generateCommitsStreakMetrics } = require('./generate-commits-streak');
 
-  console.log('💻 Generating commit streak metrics...');
-  execSync('node generate-commits-streak.js', {
-    cwd: __dirname,
-    stdio: 'inherit',
-  });
+async function generateMetrics(options = {}) {
+  const dryRun = options.dryRun === true;
+  const request = createRequestContext('metrics');
+  ensureMetricsDir();
 
-  // console.log('📝 Updating README...');
-  // execSync('node update-readme.js', { cwd: __dirname, stdio: 'inherit' });
+  const [pullIssue, commitsStreak] = await Promise.all([
+    generatePullIssueMetrics({ dryRun, request }),
+    generateCommitsStreakMetrics({ dryRun, request }),
+  ]);
 
-  console.log('✅ Metrics & README updated successfully.');
+  const manifest = {
+    request,
+    status: dryRun ? 'planned' : 'ready',
+    dry_run: dryRun,
+    source_fingerprint: buildSourceFingerprint([
+      'scripts/update-metrics.js',
+      'scripts/generate-pr-issue.js',
+      'scripts/generate-commits-streak.js',
+      'scripts/metrics-runtime.js',
+    ]),
+    artifacts: [...pullIssue.produced_files, ...commitsStreak.produced_files],
+    checks: [
+      {
+        name: pullIssue.name,
+        status: pullIssue.status,
+        counts: pullIssue.counts,
+      },
+      {
+        name: commitsStreak.name,
+        status: commitsStreak.status,
+        counts: commitsStreak.counts,
+      },
+    ],
+  };
+
+  if (!dryRun) {
+    fs.writeFileSync(
+      path.join(metricsDir, 'manifest.json'),
+      `${JSON.stringify(manifest, null, 2)}\n`,
+      'utf8',
+    );
+  }
+
+  return manifest;
 }
 
-generateMetrics();
+async function main() {
+  const args = parseCliArgs(process.argv.slice(2));
+  const manifest = await generateMetrics(args);
+  process.stdout.write(`${JSON.stringify(manifest, null, 2)}\n`);
+}
+
+if (require.main === module) {
+  main().catch((error) => {
+    console.error(`ERROR: ${error.message}`);
+    process.exit(1);
+  });
+}
+
+module.exports = {
+  generateMetrics,
+};

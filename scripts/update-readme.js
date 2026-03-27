@@ -1,34 +1,67 @@
-const fs = require('fs');
-const path = 'README.md';
+const fs = require('node:fs');
+const path = require('node:path');
 
-function updateReadme() {
-  let readme = fs.readFileSync(path, 'utf-8');
+const readmePath = path.join(__dirname, '..', 'README.md');
+const startMarker = '<!-- profile-metrics:start -->';
+const endMarker = '<!-- profile-metrics:end -->';
 
-  // Atualiza métricas SVG
-  // readme = readme.replace(
-  //   /<img src="\.\/metrics\/pr_issue_chart\.svg".*?\/>/,
-  //   '<img src="./projects/github-profile/metrics/pr_issue_chart.svg" alt="PRs & Issues" />'
-  // );
-
-  // readme = readme.replace(
-  //   /<img src="\.\/metrics\/commits_3d_live\.svg".*?\/>/,
-  //   '<img src="./projects/github-profile/metrics/commits_3d_live.svg" alt="Commits 3D Live" />'
-  // );
-
-  // readme = readme.replace(
-  //   /<img src="\.\/metrics\/streak_3d_live\.svg".*?\/>/,
-  //   '<img src="./projects/github-profile/metrics/streak_3d_live.svg" alt="Heatmap 3D Live" />'
-  // );
-
-  // Atualiza insights Hyper AI
-  // const insights =
-  //   `- 🏆 Última atualização: ${new Date().toLocaleString('pt-BR')}\n` +
-  //   '- ⚡ Novas conquistas desbloqueadas!\n' +
-  //   '- 📊 Performance de commits, PRs e issues atualizada!';
-  // readme = readme.replace(/<pre>.*?<\/pre>/s, `<pre>${insights}</pre>`);
-
-  // fs.writeFileSync(path, readme);
-  // console.log('✅ README atualizado com métricas e insights Hyper AI!');
+function buildManagedBlock() {
+  return [
+    startMarker,
+    '- Metrics assets: `metrics/pr_issue_chart.svg`, `metrics/commits_3d_live.svg`, `metrics/streak_3d_live.svg`',
+    '- Metrics manifest: `metrics/manifest.json`',
+    endMarker,
+  ].join('\n');
 }
 
-updateReadme();
+function updateReadme(options = {}) {
+  const apply = options.apply === true;
+  const readme = fs.readFileSync(readmePath, 'utf8');
+  const hasManagedBlock =
+    readme.includes(startMarker) && readme.includes(endMarker);
+
+  if (!hasManagedBlock) {
+    return {
+      status: 'noop',
+      changed: false,
+      detail: 'No managed metrics block found in README.md.',
+    };
+  }
+
+  const nextReadme = readme.replace(
+    new RegExp(`${startMarker}[\\s\\S]*?${endMarker}`, 'm'),
+    buildManagedBlock(),
+  );
+  const changed = nextReadme !== readme;
+
+  if (apply && changed) {
+    fs.writeFileSync(readmePath, nextReadme, 'utf8');
+  }
+
+  return {
+    status: changed ? (apply ? 'updated' : 'drift') : 'ready',
+    changed,
+    detail: changed
+      ? apply
+        ? 'Managed metrics block updated.'
+        : 'Managed metrics block is out of sync.'
+      : 'Managed metrics block already in sync.',
+  };
+}
+
+function main() {
+  const apply = process.argv.includes('--apply');
+  const result = updateReadme({ apply });
+  process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
+  if (result.status === 'drift' && !apply) {
+    process.exitCode = 1;
+  }
+}
+
+if (require.main === module) {
+  main();
+}
+
+module.exports = {
+  updateReadme,
+};

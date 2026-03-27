@@ -1,39 +1,27 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('node:path');
 const axios = require('axios');
+
+const {
+  createGithubRequestConfig,
+  createRequestContext,
+  ensureMetricsDir,
+  metricsDir,
+  parseCliArgs,
+  recordArtifact,
+} = require('./metrics-runtime');
 
 const user = 'mozgbrasil';
 const repo = 'mozgbrasil';
-
-// garante caminho relativo ao script
-const outputDir = path.join(__dirname, '..', 'metrics');
-const commitsSVG = path.join(outputDir, 'commits_3d_live.svg');
-const streakSVG = path.join(outputDir, 'streak_3d_live.svg');
-
-// cria a pasta se não existir
-if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir, { recursive: true });
-}
-
-const DAYS = 7; // Últimos 7 dias
-
-async function fetchCommits() {
-  const since = new Date(Date.now() - DAYS * 24 * 60 * 60 * 1000).toISOString();
-  const url = `https://api.github.com/repos/${user}/${repo}/commits?since=${since}&per_page=100`;
-  const res = await axios.get(url, {
-    headers: { Accept: 'application/vnd.github.v3+json' },
-  });
-  return res.data.map((c) => new Date(c.commit.author.date));
-}
+const DAYS = 7;
 
 function aggregateCommitsByDay(dates) {
   const today = new Date();
-  let counts = Array(DAYS).fill(0);
-  for (let i = 0; i < DAYS; i++) {
+  const counts = Array(DAYS).fill(0);
+  for (let i = 0; i < DAYS; i += 1) {
     const day = new Date(today);
     day.setDate(today.getDate() - i);
     counts[DAYS - i - 1] = dates.filter(
-      (d) => d.toDateString() === day.toDateString(),
+      (entry) => entry.toDateString() === day.toDateString(),
     ).length;
   }
   return counts;
@@ -42,11 +30,11 @@ function aggregateCommitsByDay(dates) {
 function generateCommitsSVG(counts) {
   const heightScale = 2;
   let bars = '';
-  for (let i = 0; i < counts.length; i++) {
-    const h = counts[i] * heightScale;
+  for (let i = 0; i < counts.length; i += 1) {
+    const height = counts[i] * heightScale;
     const x = 70 + i * 60;
-    const y = 180 - h;
-    bars += `<rect x="${x}" y="${y}" width="40" height="${h}" class="bar"/>\n`;
+    const y = 180 - height;
+    bars += `<rect x="${x}" y="${y}" width="40" height="${height}" class="bar"/>\n`;
   }
   return `
 <svg width="600" height="200" xmlns="http://www.w3.org/2000/svg">
@@ -63,14 +51,14 @@ function generateCommitsSVG(counts) {
   <text x="190" y="195" class="text">Qua</text>
   <text x="250" y="195" class="text">Qui</text>
   <text x="310" y="195" class="text">Sex</text>
-  <text x="370" y="195" class="text">Sáb</text>
+  <text x="370" y="195" class="text">Sab</text>
   <text x="430" y="195" class="text">Dom</text>
-</svg>`;
+</svg>`.trimStart();
 }
 
 function generateStreakSVG(counts) {
   let rects = '';
-  for (let i = 0; i < counts.length; i++) {
+  for (let i = 0; i < counts.length; i += 1) {
     const x = 10 + i * 30;
     const level =
       counts[i] === 0
@@ -86,7 +74,7 @@ function generateStreakSVG(counts) {
   return `
 <svg width="600" height="50" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .day { width: 20px; height: 20px; rx:4; ry:4; transition: fill 0.5s ease; }
+    .day { width: 20px; height: 20px; rx: 4; ry: 4; transition: fill 0.5s ease; }
     .level1 { fill: #d6e685; animation: pulse 1.5s infinite alternate; }
     .level2 { fill: #8cc665; animation: pulse 1.5s infinite alternate; }
     .level3 { fill: #44a340; animation: pulse 1.5s infinite alternate; }
@@ -94,19 +82,83 @@ function generateStreakSVG(counts) {
     @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
   </style>
   ${rects}
-</svg>`;
+</svg>`.trimStart();
 }
 
-(async () => {
-  try {
-    const dates = await fetchCommits();
-    const counts = aggregateCommitsByDay(dates);
+async function fetchCommits() {
+  const since = new Date(Date.now() - DAYS * 24 * 60 * 60 * 1000).toISOString();
+  const url = `https://api.github.com/repos/${user}/${repo}/commits?since=${since}&per_page=100`;
+  const response = await axios.get(
+    url,
+    createGithubRequestConfig('commits-streak'),
+  );
+  return response.data.map((entry) => new Date(entry.commit.author.date));
+}
 
-    fs.writeFileSync(commitsSVG, generateCommitsSVG(counts));
-    fs.writeFileSync(streakSVG, generateStreakSVG(counts));
+async function generateCommitsStreakMetrics(options = {}) {
+  const dryRun = options.dryRun === true;
+  const request = options.request || createRequestContext('commits-streak');
+  ensureMetricsDir();
 
-    console.log('✅ SVGs de commits e streaks gerados com sucesso!');
-  } catch (err) {
-    console.error('❌ Erro ao gerar SVGs:', err);
+  const commitsSvgPath = path.join(metricsDir, 'commits_3d_live.svg');
+  const streakSvgPath = path.join(metricsDir, 'streak_3d_live.svg');
+  const plannedCounts = Array(DAYS).fill(0);
+
+  if (dryRun) {
+    const producedFiles = [
+      recordArtifact(commitsSvgPath, generateCommitsSVG(plannedCounts), {
+        dryRun,
+      }),
+      recordArtifact(streakSvgPath, generateStreakSVG(plannedCounts), {
+        dryRun,
+      }),
+    ];
+    return {
+      name: 'commits-streak',
+      status: 'planned',
+      request,
+      dry_run: true,
+      counts: {
+        days: DAYS,
+        total_commits: 0,
+      },
+      produced_files: producedFiles,
+    };
   }
-})();
+
+  const dates = await fetchCommits();
+  const counts = aggregateCommitsByDay(dates);
+  const producedFiles = [
+    recordArtifact(commitsSvgPath, generateCommitsSVG(counts)),
+    recordArtifact(streakSvgPath, generateStreakSVG(counts)),
+  ];
+
+  return {
+    name: 'commits-streak',
+    status: 'ready',
+    request,
+    dry_run: false,
+    counts: {
+      days: DAYS,
+      total_commits: counts.reduce((total, value) => total + value, 0),
+    },
+    produced_files: producedFiles,
+  };
+}
+
+async function main() {
+  const args = parseCliArgs(process.argv.slice(2));
+  const result = await generateCommitsStreakMetrics(args);
+  process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
+}
+
+if (require.main === module) {
+  main().catch((error) => {
+    console.error(`ERROR: ${error.message}`);
+    process.exit(1);
+  });
+}
+
+module.exports = {
+  generateCommitsStreakMetrics,
+};

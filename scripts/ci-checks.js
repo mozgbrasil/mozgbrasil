@@ -41,6 +41,38 @@ function checkRequiredSnippets(file, snippets) {
   }
 }
 
+function checkSectionOrder(file, sections) {
+  const content = readProjectFile(file);
+  const headings = [...content.matchAll(/^##\s+(.+)$/gm)].map((match) => ({
+    raw: match[1].trim(),
+    normalized: match[1]
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .trim()
+      .toLowerCase(),
+    index: match.index,
+  }));
+  let lastIndex = -1;
+
+  for (const section of sections) {
+    const normalizedSection = section
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .trim()
+      .toLowerCase();
+    const heading = headings.find(
+      (entry) => entry.normalized === normalizedSection,
+    );
+    if (!heading) {
+      fail(`${file} is missing required section heading: ## ${section}`);
+    }
+    if (heading.index < lastIndex) {
+      fail(`${file} keeps section headings out of order around: ## ${section}`);
+    }
+    lastIndex = heading.index;
+  }
+}
+
 function lintScripts() {
   const scriptFiles = fs
     .readdirSync(scriptsDir)
@@ -109,6 +141,10 @@ function smokeTest() {
     'x_request_timestamp',
     'x_request_path',
     'x_request_method',
+    'npm run surface:ready',
+    'npm run surface:links:ndjson',
+    'readiness',
+    'ndjson',
   ]);
   checkRequiredSnippets('DOCUMENTATION.md', [
     '## Estrutura real do projeto',
@@ -119,22 +155,45 @@ function smokeTest() {
     'x_request_timestamp',
     'x_request_path',
     'x_request_method',
+    'supported_filters',
+    'surface:links:ndjson',
+    '/ready',
   ]);
   checkRequiredSnippets('scripts/profile-surface.js', [
     'request_id',
     'x_request_timestamp',
     'x_request_path',
     'x_request_method',
+    'supported_filters',
+    'export_formats',
+    '/ready',
   ]);
   lintScripts();
   runUnitTests();
   console.log('Smoke test passed.');
 }
 
+function checkMarkdownStructure() {
+  checkSectionOrder('README.md', [
+    'O que eu construo',
+    'Skills em foco',
+    'Sinais publicos e operacionais',
+    'Governanca do perfil',
+    'Qualidade local',
+  ]);
+  checkSectionOrder('DOCUMENTATION.md', [
+    'Estrutura real do projeto',
+    'Comandos locais',
+    'Contrato operacional minimo',
+    'O que os checks validam',
+    'Relacao com outras superficies',
+  ]);
+  console.log('Markdown structure check passed.');
+}
+
 function checkFormat() {
-  // This project currently stores mostly markdown + utility scripts.
-  // CI uses this check to assert baseline consistency without mutating files.
   lintScripts();
+  checkMarkdownStructure();
   console.log('Format check passed.');
 }
 

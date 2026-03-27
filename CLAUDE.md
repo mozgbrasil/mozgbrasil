@@ -19,6 +19,13 @@
 - `npm test`
 - `npm run check`
 - `npm run surface:json`
+- `npm run surface:md`
+- `npm run surface:ready`
+- `npm run surface:links`
+- `npm run surface:links:ndjson`
+- `npm run metrics:dry-run`
+- `bash scripts/build.sh surface-only`
+- `bash scripts/build.sh ready-only`
 - `npm run matrix:check`
 
 ## Maintenance Rules
@@ -27,6 +34,9 @@
 - Mantenha coerencia editorial entre `README.md`, `DOCUMENTATION.md`, `projects/mozgbrasil.github.io` e `projects/node-vitepress`.
 - Preserve `.tool-versions` alinhado ao Node local validado no host.
 - Preserve o contrato mínimo do snapshot `surface:json` com `request_id`, `x_request_timestamp`, `x_request_path` e `x_request_method`.
+- Preserve tambem os filtros explicitos por `category`, `host`, `section`, `search` e `limit`, alem das exportacoes `json`, `md` e `ndjson`.
+- Mantenha o snapshot de readiness local com status deterministico e checks pequenos para arquivos, secoes e superficies publicas obrigatorias.
+- Preserve a trilha de metricas com `User-Agent`, timeout, `metrics/manifest.json` e `--dry-run` nao mutante para validacao local.
 - Mantenha `AGENTS.md` e `CLAUDE.md` equivalentes.
 
 ## CI Notes

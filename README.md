@@ -74,8 +74,8 @@ O workspace fonte e privado no GitHub; a camada publica aparece nos sites, apps,
 
 ## Runtime local
 
-- Node.js `24.13.0`
-- `.tool-versions` fixa `nodejs 24.13.0` para manter o contrato local previsivel
+- Node.js `24.14.1`
+- `.tool-versions` fixa `nodejs 24.14.1` para manter o contrato local previsivel
 
 ## Sinais publicos e operacionais
 
@@ -95,6 +95,10 @@ O workspace fonte e privado no GitHub; a camada publica aparece nos sites, apps,
 
 - O perfil publica um envelope editorial de request com `request_id`, `x_request_timestamp`, `x_request_path` e `x_request_method`.
 - O snapshot pode ser lido localmente com `npm run surface:json`.
+- O snapshot tambem expoe `supported_filters` por `category`, `host`, `section`, `search`, `limit` e `status`.
+- As exportacoes locais sao explicitas em `json`, `md` e `ndjson`, incluindo `npm run surface:links:ndjson`.
+- A trilha de readiness fica disponivel em `npm run surface:ready`, com status deterministico e checks pequenos para arquivos, secoes e superficies publicas obrigatorias.
+- A trilha de metricas pode ser validada sem mutacao com `npm run metrics:dry-run`, preservando `request_id`, `generated_at`, timeout, `User-Agent` e manifest auditavel.
 - Como a superfície principal é estática, esse contrato descreve o contexto operacional do artefato publicado e mantém a trilha auditável para tooling local.
 
 ## Perfis publicos oficiais
@@ -146,6 +150,11 @@ npm run lint
 npm test
 bash scripts/build.sh check-only
 npm run surface:json
+npm run surface:md
+npm run surface:ready
+npm run surface:links
+npm run surface:links:ndjson
+npm run metrics:dry-run
 npm run matrix:check
 ```
 

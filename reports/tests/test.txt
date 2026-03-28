@@ -3,13 +3,13 @@
 > node scripts/ci-checks.js test
 
 Lint passed for 7 script file(s).
-✔ README keeps public profile sections and links (1.276885ms)
-✔ documentation keeps local commands and test contract (0.254095ms)
-✔ profile surface snapshot keeps request metadata contract (46.434823ms)
-✔ profile surface links view supports filters and ndjson exports (45.184789ms)
-✔ profile surface readiness view reports operational checks (43.778131ms)
-✔ metrics dry-run returns a planned manifest without mutating files (112.742095ms)
-✔ build script executes the documented phases (0.322732ms)
+✔ README keeps public profile sections and links (1.241627ms)
+✔ documentation keeps local commands and test contract (0.28323ms)
+✔ profile surface snapshot keeps request metadata contract (43.935353ms)
+✔ profile surface links view supports filters and ndjson exports (40.64556ms)
+✔ profile surface readiness view reports operational checks (42.178333ms)
+✔ metrics dry-run returns a planned manifest without mutating files (94.946814ms)
+✔ build script executes the documented phases (0.299612ms)
 ℹ tests 7
 ℹ suites 0
 ℹ pass 7
@@ -17,6 +17,6 @@ Lint passed for 7 script file(s).
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 315.402907
+ℹ duration_ms 287.455744
 Unit tests passed for 1 file(s).
 Smoke test passed.

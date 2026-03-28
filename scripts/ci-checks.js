@@ -134,7 +134,7 @@ function smokeTest() {
     'https://mozg.com.br/projetos/monorepo',
     'https://mozg.com.br/projetos/node-web-components',
     'https://mozgbrasil.github.io/node-web-components-storybook/?path=/docs/catalog-explorer--docs',
-    'https://www.npmjs.com/package/node-web-components',
+    'https://www.npmjs.com/package/@mozgbrasil/node-web-components',
     'https://mozgbrasil.github.io/',
     'workspace fonte e privado no GitHub',
     'request_id',

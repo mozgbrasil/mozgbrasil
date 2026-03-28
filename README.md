@@ -84,7 +84,7 @@ O workspace fonte e privado no GitHub; a camada publica aparece nos sites, apps,
 - **Dossier do workspace privado:** [mozg.com.br/projetos/monorepo](https://mozg.com.br/projetos/monorepo)
 - **Dossier de UI pública:** [mozg.com.br/projetos/node-web-components](https://mozg.com.br/projetos/node-web-components)
 - **Storybook publicado:** [mozgbrasil.github.io/node-web-components-storybook](https://mozgbrasil.github.io/node-web-components-storybook/?path=/docs/catalog-explorer--docs)
-- **Pacote npm:** [node-web-components](https://www.npmjs.com/package/node-web-components)
+- **Pacote npm:** [@mozgbrasil/node-web-components](https://www.npmjs.com/package/@mozgbrasil/node-web-components)
 - **Perfil GitHub:** [github.com/mozgbrasil](https://github.com/mozgbrasil)
 - **Bluesky:** [bsky.app/profile/mozgbrasil.bsky.social](https://bsky.app/profile/mozgbrasil.bsky.social)
 - **GitHub Sponsors:** [github.com/sponsors/mozgbrasil](https://github.com/sponsors/mozgbrasil)

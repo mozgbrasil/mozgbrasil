@@ -16,25 +16,25 @@
 [![Email](https://img.shields.io/badge/Email-mozgbrasil@gmail.com-ea4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mozgbrasil@gmail.com)
 [![Monorepo](https://img.shields.io/badge/Monorepo-Privado-111827?style=for-the-badge&logo=github&logoColor=white)](https://mozg.com.br/projetos/monorepo)
 
-Desenvolvo software desde 1999 e hoje concentro meu trabalho em arquitetura de software, plataformas full stack, automacao operacional, observabilidade e produtos digitais multi-stack.
-Tambem mantenho um portal complementar em GitHub Pages com perfil, redes e sinais recentes do trabalho em [mozgbrasil.github.io](https://mozgbrasil.github.io/).
+Desenvolvo software desde 1999 e hoje concentro meu trabalho em arquitetura de software, plataformas full stack, automação operacional, observabilidade e produtos digitais multi-stack.
+Também mantenho um portal complementar em GitHub Pages com perfil, redes e sinais recentes do trabalho em [mozgbrasil.github.io](https://mozgbrasil.github.io/).
 
-Sao Paulo, Brasil
+São Paulo, Brasil
 
 </div>
 
 ## O que eu construo
 
 - Plataformas full stack que conectam produto, backend, frontends, autenticacao, qualidade e deploy.
-- Monorepos poliglotas com padronizacao de CI, documentacao, runtime local e governanca de projeto.
-- Ferramentas de automacao para operacao, integracoes, e-commerce, conteudo e fluxos assistidos por IA.
-- Ambientes com foco em confiabilidade: health checks, contratos E2E, observabilidade e operacao segura.
+- Monorepos poliglotas com padronizacao de CI, documentação, runtime local e governança de projeto.
+- Ferramentas de automação para operação, integrações, e-commerce, conteúdo e fluxos assistidos por IA.
+- Ambientes com foco em confiabilidade: health checks, contratos E2E, observabilidade e operação segura.
 
 ## Trajetoria
 
-- Atuo com desenvolvimento de software desde 1999, em uma jornada que foi de funcoes operacionais ate engenharia, arquitetura e DevOps.
+- Atuo com desenvolvimento de software desde 1999, em uma jornada que foi de funcoes operacionais até engenharia, arquitetura e DevOps.
 - Tenho experiencia em contextos de alta criticidade e escala, com passagem por Santander, Bradesco e Fundacao Vanzolini (USP).
-- Em 2016 fundei o **MOZG**, laboratorio onde transformo aprendizado continuo em produtos, modulos, automacoes e documentacao.
+- Em 2016 fundei o **MOZG**, laboratório onde transformo aprendizado continuo em produtos, módulos, automações e documentação.
 - Minha atuacao passa principalmente por fintech, e-commerce, plataformas corporativas, cloud e produtividade de engenharia.
 
 ## Especialidades
@@ -43,24 +43,24 @@ Sao Paulo, Brasil
 - **Backend:** Node.js, NestJS, Express, Python, Django, FastAPI, Go, Java Spring, PHP Laravel/Magento, Ruby on Rails, Rust
 - **Dados:** PostgreSQL, MySQL, SQL Server, Oracle, MongoDB, Redis, Elasticsearch
 - **Platform Engineering:** Docker, Kubernetes, Helm, Terraform, GitHub Actions, Prometheus, Grafana, ELK
-- **Arquitetura:** monolitos evolutivos, microservicos, BFF, APIs, automacao de workflow, quality gates e CI por matriz
+- **Arquitetura:** monolitos evolutivos, microservicos, BFF, APIs, automação de workflow, quality gates e CI por matriz
 
 ## Skills em foco
 
-- **Arquitetura e governanca:** desenho de plataformas, contratos pequenos, monorepos auditaveis e evolucao coerente entre stacks.
-- **Confiabilidade operacional:** quality gates, readiness, health checks, exportacao operacional, observabilidade e validacao fresh.
-- **Produto e frontends:** interfaces React, Next.js, Angular, Web Components, design systems e documentacao publica.
-- **Backends e integracoes:** APIs, autenticacao, workflows duraveis, integracoes corporativas e superfícies serverless.
-- **Automacao e IA aplicada:** fluxos assistidos por IA, automacao editorial, ferramentas operacionais e pipelines reproduziveis.
+- **Arquitetura e governança:** desenho de plataformas, contratos pequenos, monorepos auditáveis e evolução coerente entre stacks.
+- **Confiabilidade operacional:** quality gates, readiness, health checks, exportação operacional, observabilidade e validação fresh.
+- **Produto e frontends:** interfaces React, Next.js, Angular, Web Components, design systems e documentação pública.
+- **Backends e integrações:** APIs, autenticacao, workflows duraveis, integrações corporativas e superfícies serverless.
+- **Automação e IA aplicada:** fluxos assistidos por IA, automação editorial, ferramentas operacionais e pipelines reproduzíveis.
 
 ## MOZG
 
-O **MOZG** e o meu laboratorio de software desde 2016. E onde experimento stacks, publico modulos, documento padroes e transformo necessidades recorrentes em ativos reutilizaveis.
+O **MOZG** e o meu laboratório de software desde 2016. E onde experimento stacks, público módulos, documento padrões e transformo necessidades recorrentes em ativos reutilizáveis.
 
-- Integracoes para e-commerce, com historico em modulos Magento para meios de pagamento e logistica.
-- Publicacao de pacotes e artefatos para consumo via Composer e npm.
-- Documentacao tecnica, sites estaticos, componentes web, ferramentas de observabilidade e automacao local.
-- Presenca publica distribuida entre o site principal [mozg.com.br](https://mozg.com.br/) e o portal complementar [mozgbrasil.github.io](https://mozgbrasil.github.io/).
+- Integrações para e-commerce, com histórico em módulos Magento para meios de pagamento e logistica.
+- Publicação de pacotes e artefatos para consumo via Composer e npm.
+- Documentação técnica, sites estáticos, componentes web, ferramentas de observabilidade e automação local.
+- Presença pública distribuída entre o site principal [mozg.com.br](https://mozg.com.br/) e o portal complementar [mozgbrasil.github.io](https://mozgbrasil.github.io/).
 
 [![Packagist](https://img.shields.io/badge/Packagist-mozgbrasil-f28d1a?style=flat-square&logo=packagist&logoColor=white)](https://packagist.org/packages/mozgbrasil/)
 [![npm](https://img.shields.io/badge/npm-@mozgbrasil-cb3837?style=flat-square&logo=npm&logoColor=white)](https://www.npmjs.com/~mozg)
@@ -69,20 +69,20 @@ O **MOZG** e o meu laboratorio de software desde 2016. E onde experimento stacks
 
 No monorepo eu mantenho, documento e evoluo projetos em Node.js, Python, Go, Java, PHP, Ruby, Rust, Deno, Bash, Perl, C++ e .NET, alem da camada de infraestrutura com Helm Charts, Terraform, monitoramento e deploy para GitHub Pages.
 
-O objetivo nao e apenas demonstrar stack. E praticar arquitetura, operacao, automacao, padronizacao de qualidade e evolucao continua em um ambiente unico.
+O objetivo não e apenas demonstrar stack. E praticar arquitetura, operação, automação, padronizacao de qualidade e evolução continua em um ambiente único.
 O workspace fonte e privado no GitHub; a camada publica aparece nos sites, apps, dossies e artefatos derivados do laboratorio.
 
 ## Runtime local
 
 - Node.js `24.14.1`
-- `.tool-versions` fixa `nodejs 24.14.1` para manter o contrato local previsivel
+- `.tool-versions` fixa `nodejs 24.14.1` para manter o contrato local previsível
 
 ## Sinais publicos e operacionais
 
 - **Website principal:** [mozg.com.br](https://mozg.com.br/)
 - **Portal complementar:** [mozgbrasil.github.io](https://mozgbrasil.github.io/)
 - **Dossier do workspace privado:** [mozg.com.br/projetos/monorepo](https://mozg.com.br/projetos/monorepo)
-- **Dossier de UI publica:** [mozg.com.br/projetos/node-web-components](https://mozg.com.br/projetos/node-web-components)
+- **Dossier de UI pública:** [mozg.com.br/projetos/node-web-components](https://mozg.com.br/projetos/node-web-components)
 - **Storybook publicado:** [mozgbrasil.github.io/node-web-components-storybook](https://mozgbrasil.github.io/node-web-components-storybook/?path=/docs/catalog-explorer--docs)
 - **Pacote npm:** [node-web-components](https://www.npmjs.com/package/node-web-components)
 - **Perfil GitHub:** [github.com/mozgbrasil](https://github.com/mozgbrasil)
@@ -91,14 +91,14 @@ O workspace fonte e privado no GitHub; a camada publica aparece nos sites, apps,
 - **Google Developers Profile:** [developers.google.com/profile/u/mozgbrasil](https://developers.google.com/profile/u/mozgbrasil)
 - **OpenProfile:** [openprofile.dev/profile/mozgbrasil](https://openprofile.dev/profile/mozgbrasil)
 
-## Contrato operacional minimo
+## Contrato operacional mínimo
 
 - O perfil publica um envelope editorial de request com `request_id`, `x_request_timestamp`, `x_request_path` e `x_request_method`.
 - O snapshot pode ser lido localmente com `npm run surface:json`.
-- O snapshot tambem expoe `supported_filters` por `category`, `host`, `section`, `search`, `limit` e `status`.
-- As exportacoes locais sao explicitas em `json`, `md` e `ndjson`, incluindo `npm run surface:links:ndjson`.
-- A trilha de readiness fica disponivel em `npm run surface:ready`, com status deterministico e checks pequenos para arquivos, secoes e superficies publicas obrigatorias.
-- A trilha de metricas pode ser validada sem mutacao com `npm run metrics:dry-run`, preservando `request_id`, `generated_at`, timeout, `User-Agent` e manifest auditavel.
+- O snapshot também expõe `supported_filters` por `category`, `host`, `section`, `search`, `limit` e `status`.
+- As exportações locais são explícitas em `json`, `md` e `ndjson`, incluindo `npm run surface:links:ndjson`.
+- A trilha de readiness fica disponível em `npm run surface:ready`, com status determinístico e checks pequenos para arquivos, seções e superfícies públicas obrigatórias.
+- A trilha de métricas pode ser validada sem mutacao com `npm run metrics:dry-run`, preservando `request_id`, `generated_at`, timeout, `User-Agent` e manifest auditável.
 - Como a superfície principal é estática, esse contrato descreve o contexto operacional do artefato publicado e mantém a trilha auditável para tooling local.
 
 ## Perfis publicos oficiais
@@ -110,13 +110,13 @@ O workspace fonte e privado no GitHub; a camada publica aparece nos sites, apps,
 
 ## Ecossistema mobile
 
-A presenca publica do laboratorio tambem inclui distribuicao Android com rastreabilidade entre site, portal, app e operacao local.
+A presença pública do laboratório também inclui distribuição Android com rastreabilidade entre site, portal, app e operação local.
 
 - **Perfil oficial do desenvolvedor:** <https://play.google.com/store/apps/dev?id=8685510812208806498>
-- **Mozg TWA** — app de marca empacotado com `Bubblewrap`, conectado ao website principal e pensado para distribuicao rapida no Android.
+- **Mozg TWA** — app de marca empacotado com `Bubblewrap`, conectado ao website principal e pensado para distribuição rapida no Android.
 - **Mozg Híbrido** — app Angular voltado para operação, catálogo e continuidade de produto em ambiente mobile.
 
-### Origem de código e publicação
+### Origem de código e públicação
 
 - **Superfícies web e identidade visual:** `projects/node-vitepress` (`mozg.com.br`) e `projects/mozgbrasil.github.io` (portal complementar).
 - **Base de app e operação de catálogo:** `projects/node-angular`.
@@ -128,15 +128,15 @@ A presenca publica do laboratorio tambem inclui distribuicao Android com rastrea
 - **Mozg TWA (Bubblewrap):** <https://play.google.com/store/search?q=site:www.mozg.com.br+Mozg+TWA>
 - **Mozg Híbrido (Angular):** <https://play.google.com/store/search?q=site:www.mozg.com.br+Mozg+H%C3%ADbrido>
 
-Esses canais formam um conjunto unico: o site principal posiciona a narrativa,
-o GitHub Profile sintetiza a identidade tecnica no proprio GitHub e o portal em
-GitHub Pages complementa com links, portfolio e sinais recentes.
+Esses canais formam um conjunto único: o site principal posiciona a narrativa,
+o GitHub Profile sintetiza a identidade técnica no proprio GitHub e o portal em
+GitHub Pages complementa com links, portfólio e sinais recentes.
 
 ## Governanca do perfil
 
 - O README deve permanecer coerente com `projects/mozgbrasil.github.io`.
-- Mudancas estruturais devem preservar links principais, metadados publicos e a narrativa profissional central.
-- O projeto possui checks locais para scripts e validacao das secoes essenciais da documentacao.
+- Mudancas estruturais devem preservar links principais, metadados públicos e a narrativa profissional central.
+- O projeto possui checks locais para scripts e validação das seções essenciais da documentação.
 
 ## Qualidade local
 
@@ -158,8 +158,8 @@ npm run metrics:dry-run
 npm run matrix:check
 ```
 
-Os testes locais validam o contrato editorial do perfil, a presenca das secoes
-minimas, os links publicos prioritarios e a integridade dos scripts
+Os testes locais validam o contrato editorial do perfil, a presença das seções
+minimas, os links públicos prioritarios e a integridade dos scripts
 operacionais em `tests/00-profile-contract.test.js`.
 
 O gate local canonico e `bash scripts/build.sh all`.

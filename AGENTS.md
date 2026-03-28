@@ -30,13 +30,13 @@
 
 ## Maintenance Rules
 
-- O workspace `monorepo` e privado; o README publico deve apontar para `mozg.com.br`, `mozgbrasil.github.io`, perfil GitHub, Google Play e dossiers publicos, nunca para uma URL privada do repositório.
-- Mantenha coerencia editorial entre `README.md`, `DOCUMENTATION.md`, `projects/mozgbrasil.github.io` e `projects/node-vitepress`.
+- O workspace `monorepo` e privado; o README público deve apontar para `mozg.com.br`, `mozgbrasil.github.io`, perfil GitHub, Google Play e dossiers públicos, nunca para uma URL privada do repositório.
+- Mantenha coerência editorial entre `README.md`, `DOCUMENTATION.md`, `projects/mozgbrasil.github.io` e `projects/node-vitepress`.
 - Preserve `.tool-versions` alinhado ao Node local validado no host.
 - Preserve o contrato mínimo do snapshot `surface:json` com `request_id`, `x_request_timestamp`, `x_request_path` e `x_request_method`.
-- Preserve tambem os filtros explicitos por `category`, `host`, `section`, `search` e `limit`, alem das exportacoes `json`, `md` e `ndjson`.
-- Mantenha o snapshot de readiness local com status deterministico e checks pequenos para arquivos, secoes e superficies publicas obrigatorias.
-- Preserve a trilha de metricas com `User-Agent`, timeout, `metrics/manifest.json` e `--dry-run` nao mutante para validacao local.
+- Preserve também os filtros explícitos por `category`, `host`, `section`, `search` e `limit`, alem das exportacoes `json`, `md` e `ndjson`.
+- Mantenha o snapshot de readiness local com status determinístico e checks pequenos para arquivos, secoes e superfícies públicas obrigatórias.
+- Preserve a trilha de métricas com `User-Agent`, timeout, `metrics/manifest.json` e `--dry-run` não mutante para validação local.
 - Mantenha `AGENTS.md` e `CLAUDE.md` equivalentes.
 
 ## CI Notes

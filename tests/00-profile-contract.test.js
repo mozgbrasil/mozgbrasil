@@ -121,6 +121,18 @@ test('profile surface readiness view reports operational checks', () => {
   assert.ok(readiness.checks.every((check) => check.status === 'ready'));
 });
 
+test('package metadata points only to public support surfaces', () => {
+  const pkg = JSON.parse(readProjectFile('package.json'));
+
+  assert.equal(pkg.homepage, 'https://github.com/mozgbrasil');
+  assert.equal(pkg.bugs?.email, 'mozgbrasil@gmail.com');
+  assert.equal(pkg.bugs?.url, 'https://mozg.com.br/projetos/monorepo');
+  assert.doesNotMatch(
+    JSON.stringify(pkg),
+    /github\.com\/mozgbrasil\/monorepo/i,
+  );
+});
+
 test('metrics dry-run returns a planned manifest without mutating files', () => {
   const manifest = JSON.parse(
     cp.execFileSync(

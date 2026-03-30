@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Public GitHub profile and editorial contract for the MOZG laboratory identity surface.",
   "main": "index.js",
+  "homepage": "https://github.com/mozgbrasil",
   "packageManager": "npm@11.6.1",
   "engines": {
     "node": ">=22.0.0",
@@ -16,6 +17,10 @@
     "profileSurface": "github-profile",
     "profilePortal": "https://mozgbrasil.github.io/",
     "primaryWebsite": "https://mozg.com.br/"
+  },
+  "bugs": {
+    "email": "mozgbrasil@gmail.com",
+    "url": "https://mozg.com.br/projetos/monorepo"
   },
   "scripts": {
     "postinstall": "echo \"postinstall $npm_package_name\"",

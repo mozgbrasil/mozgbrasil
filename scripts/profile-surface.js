@@ -23,16 +23,23 @@ const requiredFiles = [
 const requiredSections = [
   'O que eu construo',
   'Skills em foco',
-  'Sinais publicos e operacionais',
-  'Governanca do perfil',
-  'Qualidade local',
+  'Ecossistema digital',
+  'Canais públicos',
+  'Confiança pública',
+  'Perfis públicos oficiais',
+  'Ecossistema mobile',
 ];
 
 const requiredPublicUrls = [
   'https://mozg.com.br/',
   'https://mozgbrasil.github.io/',
-  'https://mozg.com.br/projetos/monorepo',
+  'https://mozg.com.br/portfolio',
+  'https://mozg.com.br/contato',
+  'https://mozg.com.br/finalizar-compra',
   'https://github.com/mozgbrasil',
+  'https://mozg.com.br/politica-de-devolucao',
+  'https://br.trustpilot.com/review/mozg.com.br',
+  'https://brasilparticipativo.presidencia.gov.br/profiles/mozgbrasil/activity',
 ];
 
 const requiredContactUrls = [
@@ -154,6 +161,12 @@ function categorizeUrl(rawUrl) {
   }
   if (url.hostname === 'www.linkedin.com') {
     return { category: 'social', host: url.hostname };
+  }
+  if (url.hostname === 'br.trustpilot.com') {
+    return { category: 'trust', host: url.hostname };
+  }
+  if (url.hostname === 'brasilparticipativo.presidencia.gov.br') {
+    return { category: 'civic', host: url.hostname };
   }
   if (url.hostname === 'www.npmjs.com') {
     return { category: 'package', host: url.hostname };

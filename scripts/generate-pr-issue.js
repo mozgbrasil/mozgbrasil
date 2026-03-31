@@ -1,5 +1,4 @@
 const path = require('node:path');
-const axios = require('axios');
 
 const {
   createGithubRequestConfig,
@@ -14,6 +13,7 @@ const user = 'mozgbrasil';
 const repo = 'mozgbrasil';
 
 async function fetchPRsAndIssues() {
+  const axios = require('axios');
   const pullsUrl = `https://api.github.com/repos/${user}/${repo}/pulls?state=all`;
   const issuesUrl = `https://api.github.com/repos/${user}/${repo}/issues?state=all`;
   const [pullsResponse, issuesResponse] = await Promise.all([

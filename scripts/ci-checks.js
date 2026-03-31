@@ -127,24 +127,15 @@ function smokeTest() {
   checkEqualFiles('AGENTS.md', 'CLAUDE.md');
   checkRequiredSnippets('README.md', [
     '## O que eu construo',
-    '## Monorepo poliglota',
-    '## Sinais publicos e operacionais',
-    '## Governanca do perfil',
+    '## Ecossistema digital',
+    '## Canais públicos',
     'https://mozg.com.br/',
-    'https://mozg.com.br/projetos/monorepo',
+    'https://mozg.com.br/portfolio',
     'https://mozg.com.br/projetos/node-web-components',
     'https://mozgbrasil.github.io/node-web-components-storybook/?path=/docs/catalog-explorer--docs',
     'https://www.npmjs.com/package/@mozgbrasil/node-web-components',
     'https://mozgbrasil.github.io/',
-    'workspace fonte e privado no GitHub',
-    'request_id',
-    'x_request_timestamp',
-    'x_request_path',
-    'x_request_method',
-    'npm run surface:ready',
-    'npm run surface:links:ndjson',
-    'readiness',
-    'ndjson',
+    'https://mozg.com.br/politica-de-devolucao',
   ]);
   checkRequiredSnippets('DOCUMENTATION.md', [
     '## Estrutura real do projeto',
@@ -177,16 +168,16 @@ function checkMarkdownStructure() {
   checkSectionOrder('README.md', [
     'O que eu construo',
     'Skills em foco',
-    'Sinais publicos e operacionais',
-    'Governanca do perfil',
-    'Qualidade local',
+    'Canais públicos',
+    'Perfis públicos oficiais',
+    'Ecossistema mobile',
   ]);
   checkSectionOrder('DOCUMENTATION.md', [
     'Estrutura real do projeto',
     'Comandos locais',
-    'Contrato operacional minimo',
+    'Snapshot local para manutenção',
     'O que os checks validam',
-    'Relacao com outras superficies',
+    'Relação com outras superfícies',
   ]);
   console.log('Markdown structure check passed.');
 }

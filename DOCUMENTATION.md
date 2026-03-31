@@ -3,7 +3,7 @@
 ## Estrutura real do projeto
 
 - `README.md`: superfície pública principal do perfil.
-- `DOCUMENTATION.md`: contrato operacional e editorial usado pela CI local.
+- `DOCUMENTATION.md`: guia de manutenção local e contrato editorial usado pela CI.
 - `AGENTS.md` e `CLAUDE.md`: diretrizes equivalentes para manutenção do projeto.
 - `scripts/update-readme.js`: sincronizador opcional de bloco gerenciado para métricas, seguro por padrão.
 - `scripts/update-metrics.js`: atualização dos artefatos em `metrics/`.
@@ -33,6 +33,8 @@ node scripts/update-metrics.js
 
 ## Contrato operacional minimo
 
+## Snapshot local para manutenção
+
 O projeto mantém um snapshot editorial em `scripts/profile-surface.js` com
 `request_id`, `x_request_timestamp`, `x_request_path` e `x_request_method`
 para auditoria local da superfície pública.
@@ -55,7 +57,7 @@ O mesmo snapshot também expõe:
 - presença da seção `Skills em foco` e dos perfis públicos prioritários usados como prova social e rastreabilidade externa;
 - presença das seções mínimas desta documentação para manter o contrato de CI legível;
 - execucao ordenada do contrato de testes em `tests/00-profile-contract.test.js`;
-- contrato operacional mínimo do snapshot `npm run surface:json`;
+- contrato local do snapshot `npm run surface:json`;
 - filtros e exportações explícitas de `npm run surface:links` e `npm run surface:links:ndjson`;
 - readiness local em `/ready` via `npm run surface:ready`;
 - qualidade do contrato editorial via ordem mínima das seções em `README.md` e `DOCUMENTATION.md`;
@@ -64,6 +66,6 @@ O mesmo snapshot também expõe:
 
 ## Relação com outras superfícies
 
-- `README.md` resume o posicionamento técnico no próprio GitHub.
+- `README.md` resume o posicionamento público no próprio GitHub.
 - `projects/mozgbrasil.github.io/index.html` concentra a presença complementar em GitHub Pages.
-- `projects/node-vitepress` concentra os dossiers públicos do laboratório e do workspace privado.
+- `projects/node-vitepress` concentra os dossiers públicos do laboratório.

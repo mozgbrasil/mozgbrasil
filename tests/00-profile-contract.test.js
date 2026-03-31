@@ -27,26 +27,23 @@ test('README keeps public profile sections and links', () => {
   for (const snippet of [
     '## O que eu construo',
     '## Skills em foco',
-    '## Monorepo poliglota',
-    '## Sinais publicos e operacionais',
-    '## Perfis publicos oficiais',
-    '## Governanca do perfil',
-    '## Qualidade local',
+    '## Ecossistema digital',
+    '## Canais públicos',
+    '## Confiança pública',
+    '## Perfis públicos oficiais',
     'https://mozg.com.br/',
     'https://mozgbrasil.github.io/',
     'https://bsky.app/profile/mozgbrasil.bsky.social',
     'https://github.com/sponsors/mozgbrasil',
     'https://developers.google.com/profile/u/mozgbrasil',
     'https://openprofile.dev/profile/mozgbrasil',
-    'workspace fonte e privado no GitHub',
-    'request_id',
-    'x_request_timestamp',
-    'x_request_path',
-    'x_request_method',
-    'npm run surface:ready',
-    'npm run surface:links:ndjson',
-    'readiness',
-    'ndjson',
+    'https://mozg.com.br/portfolio',
+    'https://mozg.com.br/contato',
+    'https://mozg.com.br/finalizar-compra',
+    'https://mozg.com.br/politica-de-devolucao',
+    'https://br.trustpilot.com/review/mozg.com.br',
+    'https://brasilparticipativo.presidencia.gov.br/profiles/mozgbrasil/activity',
+    '07.361.259/0001-07',
   ]) {
     assert.match(
       readme,
@@ -61,6 +58,7 @@ test('documentation keeps local commands and test contract', () => {
   for (const snippet of [
     '## Estrutura real do projeto',
     '## Comandos locais',
+    '## Snapshot local para manutenção',
     'npm test',
     'bash scripts/build.sh',
     'tests/00-profile-contract.test.js',
@@ -89,7 +87,7 @@ test('profile surface snapshot keeps request metadata contract', () => {
   assert.equal(snapshot.readiness.status, 'ready');
   assert.ok(snapshot.surface.supported_filters.includes('category'));
   assert.ok(snapshot.surface.export_formats.includes('ndjson'));
-  assert.ok(snapshot.summary.public_urls_total >= 10);
+  assert.ok(snapshot.summary.public_urls_total >= 14);
 });
 
 test('profile surface links view supports filters and ndjson exports', () => {
@@ -110,6 +108,19 @@ test('profile surface links view supports filters and ndjson exports', () => {
   }
 });
 
+test('profile surface links expose trust surfaces', () => {
+  const payload = JSON.parse(
+    runSurface(['--view=links', '--format=json', '--category=trust']),
+  );
+
+  assert.ok(payload.items_total >= 1);
+  assert.ok(
+    payload.items.some(
+      (item) => item.url === 'https://br.trustpilot.com/review/mozg.com.br',
+    ),
+  );
+});
+
 test('profile surface readiness view reports operational checks', () => {
   const readiness = JSON.parse(
     runSurface(['--view=readiness', '--format=json', '--status=ready']),
@@ -126,7 +137,7 @@ test('package metadata points only to public support surfaces', () => {
 
   assert.equal(pkg.homepage, 'https://github.com/mozgbrasil');
   assert.equal(pkg.bugs?.email, 'mozgbrasil@gmail.com');
-  assert.equal(pkg.bugs?.url, 'https://mozg.com.br/projetos/monorepo');
+  assert.equal(pkg.bugs?.url, 'https://mozg.com.br/contato');
   assert.doesNotMatch(
     JSON.stringify(pkg),
     /github\.com\/mozgbrasil\/monorepo/i,

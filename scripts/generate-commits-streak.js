@@ -1,5 +1,4 @@
 const path = require('node:path');
-const axios = require('axios');
 
 const {
   createGithubRequestConfig,
@@ -86,6 +85,7 @@ function generateStreakSVG(counts) {
 }
 
 async function fetchCommits() {
+  const axios = require('axios');
   const since = new Date(Date.now() - DAYS * 24 * 60 * 60 * 1000).toISOString();
   const url = `https://api.github.com/repos/${user}/${repo}/commits?since=${since}&per_page=100`;
   const response = await axios.get(

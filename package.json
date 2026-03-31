@@ -20,7 +20,7 @@
   },
   "bugs": {
     "email": "mozgbrasil@gmail.com",
-    "url": "https://mozg.com.br/projetos/monorepo"
+    "url": "https://mozg.com.br/contato"
   },
   "scripts": {
     "postinstall": "echo \"postinstall $npm_package_name\"",

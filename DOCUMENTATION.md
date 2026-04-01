@@ -36,11 +36,13 @@ node scripts/update-metrics.js
 ## Snapshot local para manutenção
 
 O projeto mantém um snapshot editorial em `scripts/profile-surface.js` com
-`request_id`, `x_request_timestamp`, `x_request_path` e `x_request_method`
-para auditoria local da superfície pública.
+`request_id`, `x_request_timestamp`, `x_request_path`, `x_request_method` e
+`api_version` para auditoria local da superfície pública.
 
 O mesmo snapshot também expõe:
 
+- `api_version`: `2026.03`
+- `audit_headers`: `request_id`, `x_request_timestamp`, `x_request_path`, `x_request_method` e `api_version`
 - `supported_filters`: `category`, `host`, `section`, `search`, `limit` e `status`
 - `export_formats`: `json`, `md` e `ndjson`
 - `readiness_path`: `/ready`

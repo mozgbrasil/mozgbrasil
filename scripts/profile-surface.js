@@ -46,6 +46,14 @@ const requiredContactUrls = [
   'mailto:mozgbrasil@gmail.com',
   'https://www.linkedin.com/in/mozgbrasil/',
 ];
+const PROFILE_SURFACE_API_VERSION = '2026.03';
+const PROFILE_SURFACE_AUDIT_HEADERS = [
+  'request_id',
+  'x_request_timestamp',
+  'x_request_path',
+  'x_request_method',
+  'api_version',
+];
 
 function parseArgs(argv) {
   const args = {
@@ -100,6 +108,7 @@ function buildRequestMeta(args) {
     process.env.PROFILE_SURFACE_TIMESTAMP || new Date().toISOString();
 
   return {
+    api_version: PROFILE_SURFACE_API_VERSION,
     request_id: requestId,
     x_request_timestamp: timestamp,
     x_request_path:
@@ -231,7 +240,7 @@ function extractLinks(readme, sections) {
   return entries.sort((left, right) => left.url.localeCompare(right.url));
 }
 
-function buildReadiness(sections, links) {
+function buildReadiness(sections, links, documentation) {
   const checks = [];
   const agentsEqual = readText(agentsPath) === readText(claudePath);
   const fileMissing = requiredFiles.filter(
@@ -248,6 +257,11 @@ function buildReadiness(sections, links) {
   const missingContactUrls = requiredContactUrls.filter(
     (url) => !presentUrls.has(url),
   );
+  const surfaceContractReady =
+    documentation.includes('api_version') &&
+    documentation.includes('audit_headers') &&
+    documentation.includes('surface:json') &&
+    documentation.includes('surface:ready');
 
   checks.push({
     name: 'required-files',
@@ -288,6 +302,13 @@ function buildReadiness(sections, links) {
         ? 'contact surface URLs are present'
         : `missing: ${missingContactUrls.join(', ')}`,
   });
+  checks.push({
+    name: 'surface-contract',
+    status: surfaceContractReady ? 'ready' : 'attention',
+    detail: surfaceContractReady
+      ? 'documentation keeps api_version, audit_headers and the local surface commands'
+      : 'DOCUMENTATION.md must describe api_version, audit_headers and the local surface commands',
+  });
 
   const status = checks.every((check) => check.status === 'ready')
     ? 'ready'
@@ -303,9 +324,10 @@ function buildReadiness(sections, links) {
 
 function buildSnapshot(args) {
   const readme = readText(readmePath);
+  const documentation = readText(documentationPath);
   const sections = extractSections(readme);
   const links = extractLinks(readme, sections);
-  const readiness = buildReadiness(sections, links);
+  const readiness = buildReadiness(sections, links, documentation);
   const request = buildRequestMeta(args);
   const categories = [...new Set(links.map((link) => link.category))].sort();
   const hosts = [...new Set(links.map((link) => link.host))].sort();
@@ -313,6 +335,8 @@ function buildSnapshot(args) {
   return {
     request,
     surface: {
+      api_version: PROFILE_SURFACE_API_VERSION,
+      audit_headers: [...PROFILE_SURFACE_AUDIT_HEADERS],
       name: 'github-profile',
       kind: 'editorial-profile',
       runtime: 'nodejs',
@@ -341,6 +365,8 @@ function buildSnapshot(args) {
     links,
     readiness,
     summary: {
+      api_version: PROFILE_SURFACE_API_VERSION,
+      audit_headers_total: PROFILE_SURFACE_AUDIT_HEADERS.length,
       sections_total: sections.length,
       public_urls_total: links.length,
       categories,
@@ -436,6 +462,7 @@ function toMarkdown(view, payload) {
       '# GitHub Profile Surface',
       '',
       `- request_id: ${payload.request.request_id}`,
+      `- api_version: ${payload.request.api_version}`,
       `- x_request_timestamp: ${payload.request.x_request_timestamp}`,
       `- x_request_path: ${payload.request.x_request_path}`,
       `- x_request_method: ${payload.request.x_request_method}`,
@@ -449,6 +476,9 @@ function toMarkdown(view, payload) {
       '',
       '## Export Formats',
       ...payload.surface.export_formats.map((entry) => `- ${entry}`),
+      '',
+      '## Audit Headers',
+      ...payload.surface.audit_headers.map((entry) => `- ${entry}`),
       '',
       '## Public URLs',
       ...payload.links.map(

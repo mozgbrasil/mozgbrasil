@@ -34,6 +34,7 @@
 - Mantenha coerência editorial entre `README.md`, `DOCUMENTATION.md`, `projects/mozgbrasil.github.io` e `projects/node-vitepress`.
 - Preserve `.tool-versions` alinhado ao Node local validado no host.
 - Preserve o contrato mínimo do snapshot `surface:json` com `request_id`, `x_request_timestamp`, `x_request_path` e `x_request_method`.
+- Preserve também `api_version` e `audit_headers` explícitos no snapshot `surface:json`, na documentação local e nos testes.
 - Preserve também os filtros explícitos por `category`, `host`, `section`, `search` e `limit`, alem das exportacoes `json`, `md` e `ndjson`.
 - Mantenha o snapshot de readiness local com status determinístico e checks pequenos para arquivos, secoes e superfícies públicas obrigatórias.
 - Preserve a trilha de métricas com `User-Agent`, timeout, `metrics/manifest.json` e `--dry-run` não mutante para validação local.

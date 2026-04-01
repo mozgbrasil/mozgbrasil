@@ -126,6 +126,12 @@ Esses canais formam um conjunto único: o site principal posiciona a narrativa,
 o GitHub Profile sintetiza a identidade profissional no próprio GitHub e o portal em
 GitHub Pages complementa com links, portfólio e sinais recentes.
 
+## Superfície auditável
+
+O repositório também preserva uma trilha local simples para manutenção com
+`npm run surface:json`, `npm run surface:ready`, `api_version` estável e
+`audit_headers` explícitos para o snapshot editorial do perfil.
+
 ## GitHub Stats
 
 <div align="center">

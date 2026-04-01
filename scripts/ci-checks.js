@@ -136,6 +136,9 @@ function smokeTest() {
     'https://www.npmjs.com/package/@mozgbrasil/node-web-components',
     'https://mozgbrasil.github.io/',
     'https://mozg.com.br/politica-de-devolucao',
+    'npm run surface:json',
+    'api_version',
+    'audit_headers',
   ]);
   checkRequiredSnippets('DOCUMENTATION.md', [
     '## Estrutura real do projeto',
@@ -146,6 +149,8 @@ function smokeTest() {
     'x_request_timestamp',
     'x_request_path',
     'x_request_method',
+    'api_version',
+    'audit_headers',
     'supported_filters',
     'surface:links:ndjson',
     '/ready',
@@ -155,6 +160,8 @@ function smokeTest() {
     'x_request_timestamp',
     'x_request_path',
     'x_request_method',
+    'api_version',
+    'audit_headers',
     'supported_filters',
     'export_formats',
     '/ready',

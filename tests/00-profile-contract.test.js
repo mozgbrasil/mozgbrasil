@@ -44,6 +44,9 @@ test('README keeps public profile sections and links', () => {
     'https://br.trustpilot.com/review/mozg.com.br',
     'https://brasilparticipativo.presidencia.gov.br/profiles/mozgbrasil/activity',
     '07.361.259/0001-07',
+    'npm run surface:json',
+    'api_version',
+    'audit_headers',
   ]) {
     assert.match(
       readme,
@@ -66,6 +69,8 @@ test('documentation keeps local commands and test contract', () => {
     'x_request_timestamp',
     'x_request_path',
     'x_request_method',
+    'api_version',
+    'audit_headers',
     'supported_filters',
     'surface:links:ndjson',
     '/ready',
@@ -81,8 +86,12 @@ test('profile surface snapshot keeps request metadata contract', () => {
   const snapshot = JSON.parse(runSurface(['--format=json']));
 
   assert.ok(snapshot.request.request_id.startsWith('github-profile-'));
+  assert.equal(snapshot.request.api_version, '2026.03');
   assert.equal(snapshot.request.x_request_path, '/surface');
   assert.equal(snapshot.request.x_request_method, 'READ');
+  assert.equal(snapshot.surface.api_version, '2026.03');
+  assert.ok(snapshot.surface.audit_headers.includes('request_id'));
+  assert.ok(snapshot.surface.audit_headers.includes('api_version'));
   assert.equal(snapshot.surface.readiness_path, '/ready');
   assert.equal(snapshot.readiness.status, 'ready');
   assert.ok(snapshot.surface.supported_filters.includes('category'));
@@ -128,8 +137,11 @@ test('profile surface readiness view reports operational checks', () => {
 
   assert.equal(readiness.status, 'ready');
   assert.equal(readiness.endpoint, '/ready');
-  assert.ok(readiness.checks_total >= 4);
+  assert.ok(readiness.checks_total >= 5);
   assert.ok(readiness.checks.every((check) => check.status === 'ready'));
+  assert.ok(
+    readiness.checks.some((check) => check.name === 'surface-contract'),
+  );
 });
 
 test('package metadata points only to public support surfaces', () => {

@@ -1,0 +1,7 @@
+
+> @mozgbrasil/github-profile@1.0.0 postinstall
+> echo "postinstall $npm_package_name"
+
+postinstall @mozgbrasil/github-profile
+
+added 23 packages in 536ms

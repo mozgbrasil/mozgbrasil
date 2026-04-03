@@ -4,4 +4,4 @@
 
 postinstall @mozgbrasil/github-profile
 
-added 23 packages in 799ms
+added 23 packages in 792ms
